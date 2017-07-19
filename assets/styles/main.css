@@ -1,30 +1,115 @@
+@import url("https://fonts.googleapis.com/css?family=Cabin");
+* {
+  box-sizing: border-box; }
+
 html, body, .container {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-  background: #f6f6f6; }
+  background: #f6f6f6;
+  font-family: 'Cabin', sans-serif;
+  color: #777;
+  font-size: 14px; }
 
-.container, .col-flex-1 {
+a {
+  color: #777;
+  text-decoration: none; }
+
+input {
+  font-family: 'Cabin', sans-serif;
+  padding: 10px;
+  border: 1px solid #d9d9d9; }
+
+.container {
   display: flex;
   flex-direction: column;
   flex: 1; }
 
 .nav {
   height: 80px;
-  border-bottom: 1px solid #d9d9d9; }
+  border-bottom: 1px solid #d9d9d9;
+  display: flex;
+  align-items: center;
+  padding: 0 40px 0 40px; }
+  .nav .logo-title {
+    margin-left: 20px;
+    font-size: 24px;
+    color: #076136;
+    font-weight: bold; }
+
+::-webkit-scrollbar {
+  width: 12px; }
+
+::-webkit-scrollbar-track {
+  background: #ededed; }
+
+::-webkit-scrollbar-thumb {
+  background: #d9d9d9; }
 
 .content {
-  flex: 1;
+  flex: 2;
   display: flex; }
-
-.col-flex-3 {
-  display: flex;
-  flex: 3.5;
-  border-left: 1px solid #d9d9d9;
-  border-right: 1px solid #d9d9d9; }
-
-.col-3 {
-  background: #efefef; }
+  .content .col-side {
+    overflow: hidden; }
+    .content .col-side:first-child {
+      max-width: 220px; }
+    .content .col-side:last-child {
+      flex: 2; }
+    .content .col-side input {
+      margin: 40px 20px 40px 20px; }
+    .content .col-side ul {
+      list-style: none;
+      padding: 0;
+      margin: 0; }
+      .content .col-side ul li {
+        padding: 20px 20px; }
+        .content .col-side ul li.active {
+          background: #0b8e4f; }
+          .content .col-side ul li.active a {
+            color: white; }
+  .content .col-main {
+    flex: 7;
+    overflow: auto;
+    border-left: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9; }
+  .content .box {
+    margin: 40px;
+    border: 1px solid #d9d9d9;
+    padding: 20px;
+    background: #f2f2f2; }
+    .content .box .title {
+      font-weight: bold;
+      font-size: 16px;
+      color: #444;
+      margin-bottom: 12px; }
+    .content .box .tag {
+      padding: 5px 10px 5px 10px;
+      background: #d9d9d9;
+      border-radius: 5px;
+      margin-right: 5px; }
+    .content .box .date {
+      float: right;
+      font-size: 10px; }
+    .content .box .message {
+      margin-top: 20px;
+      line-height: 22px; }
+    .content .box .read-more {
+      font-style: italic;
+      color: #0b8e4f;
+      cursor: pointer; }
+    .content .box .card-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px; }
+      .content .box .card-footer .media-buttons {
+        float: right; }
+  .content .announcement-wrapper {
+    margin: 40px; }
+  .content .calendar {
+    margin: 40px 20px 20px 20px;
+    height: 200px;
+    background: #f2f2f2;
+    border: 1px solid #d9d9d9; }
 
 /*# sourceMappingURL=main.css.map */

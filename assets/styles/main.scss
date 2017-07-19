@@ -1,4 +1,11 @@
 $border-color: #d9d9d9;
+$green: #076136;
+$lightGreen: #0b8e4f;
+@import url('https://fonts.googleapis.com/css?family=Cabin');
+
+* {
+  box-sizing: border-box;
+}
 
 html, body, .container {
   margin: 0;
@@ -6,9 +13,23 @@ html, body, .container {
   height: 100%;
   width: 100%;
   background: #f6f6f6;
+  font-family: 'Cabin', sans-serif;
+  color: #777;
+  font-size: 14px;
 }
 
-.container, .col-flex-1 {
+a {
+  color: #777;
+  text-decoration: none;
+}
+
+input {
+  font-family: 'Cabin', sans-serif;
+  padding: 10px;
+  border: 1px solid $border-color;
+}
+
+.container {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -17,20 +38,130 @@ html, body, .container {
 .nav {
   height: 80px;
   border-bottom: 1px solid $border-color;
+  display: flex;
+  align-items: center;
+  padding: 0 40px 0 40px;
+
+  .logo-title {
+    margin-left: 20px;
+    font-size: 24px;
+    color: $green;
+    font-weight: bold;
+  }
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ededed;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d9d9d9;
 }
 
 .content, {
-  flex: 1;
+  flex: 2;
   display: flex;
-}
 
-.col-flex-3 {
-  display: flex;
-  flex: 3.5;
-  border-left: 1px solid $border-color;
-  border-right: 1px solid $border-color;
-}
+  .col-side {
+    &:first-child {
+      max-width: 220px;
+    }
 
-.col-3 {
-  background: #efefef;
+    &:last-child {
+      flex: 2;
+    }
+
+    input {
+      margin: 40px 20px 40px 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 20px 20px;
+
+        &.active {
+          background: $lightGreen;
+
+          a {
+            color: white;
+          }
+        }
+      }
+    }
+
+    overflow: hidden;
+  }
+
+  .col-main {
+    flex: 7;
+    overflow: auto;
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+  }
+
+  .box {
+    margin: 40px;
+    border: 1px solid $border-color;
+    padding: 20px;
+    background: #f2f2f2;
+
+    .title {
+      font-weight: bold;
+      font-size: 16px;
+      color: #444;
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      padding: 5px 10px 5px 10px;
+      background: #d9d9d9;
+      border-radius: 5px;
+      margin-right: 5px;
+    }
+
+    .date {
+      float: right;
+      font-size: 10px;
+    }
+
+    .message {
+      margin-top: 20px;
+      line-height: 22px;
+    }
+
+    .read-more {
+      font-style: italic;
+      color: $lightGreen;
+      cursor: pointer;
+    }
+
+    .card-footer {
+      display: flex; 
+      justify-content: space-between;
+      margin-top: 20px;
+
+      .media-buttons {
+        float:right;
+      }
+    }
+  }
+
+  .announcement-wrapper {
+    margin: 40px;
+  }
+
+  .calendar {
+    margin: 40px 20px 20px 20px;
+    height: 200px;
+    background: #f2f2f2;
+    border: 1px solid #d9d9d9;
+  }
 }
