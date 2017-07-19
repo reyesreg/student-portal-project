@@ -1,10 +1,11 @@
 <?php
-  include('../assets/php/config.php');
+  include('./assets/php/config.php');
 
   $id = '';
   if (isset($_REQUEST['id'])) {
     $id = $_REQUEST['id'];
 
+    #get announcement details
     $get_announcement = "SELECT 
       a.title, 
       a.description, 
@@ -23,6 +24,7 @@
       $lastName = $row_announcement['lastName'];
     }
 
+    #get comments of announcement
     $display_comments = "";
     $display_commentNo = 0;
     $get_comments = "SELECT 
@@ -48,7 +50,7 @@
         <div class='box'>
           <div class='comment-details'>
             <div>
-              <img class='avatar' src='..$commentImg'/>
+              <img class='avatar' src='.$commentImg'/>
               <span>$commentFirstName $commentLastName</span>
             </div>
             <div>$commentDate</div>
@@ -57,6 +59,7 @@
         </div>";
     }
 
+    #get tags/categories of announcement
     $display_tags = "";
     $get_tags = "SELECT 
       c.catName 
@@ -76,18 +79,18 @@
 
 <html>
 <head>
-  <link rel="stylesheet" href="../assets/styles/main.css">
+  <link rel="stylesheet" href="./assets/styles/main.css">
 </head>
 <body>
   <div id="fb-root"></div>
   <div class="container">
     <div class="nav">
-      <img src="../assets/img/DLS-CSB_Seal.png" alt="benilde logo" height="60px"/>
+      <img src="./assets/img/DLS-CSB_Seal.png" alt="benilde logo" height="60px"/>
       <span class="logo-title">WE BENILDE</span>
     </div>
     <div class="content">
       <div class="col-side">
-        <?php include_once('./main/sidebar-student.html'); ?>
+        <?php include_once('./views/main/sidebar-student.html'); ?>
       </div>
       <div class="col-main">
         <div class="announcement-wrapper">
@@ -100,17 +103,23 @@
           <?php echo $display_tags ?>
           <p><?php echo $description ?></p>
           <div class="card-footer">
-          <span class="read-more"><strong>Viewing <?php echo $display_commentNo ?> comments</strong></span>
-          <div class="media-buttons">
-            <a class="twitter-share-button"
-              href="https://twitter.com/intent/tweet?text=Hello%20world">
-            Tweet</a>
-            <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-size="small" data-mobile-iframe="true">
-              <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a>
+            <span class="read-more"><strong>Viewing <?php echo $display_commentNo ?> comments</strong></span>
+            <div class="media-buttons">
+              <a class="twitter-share-button"
+                href="https://twitter.com/intent/tweet?text=Hello%20world">
+              Tweet</a>
+              <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-size="small" data-mobile-iframe="true">
+                <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a>
+              </div>
             </div>
           </div>
         </div>
-        </div>
+        <form method="POST" action="">
+          <textarea id="" rows="5" placeholder="Write a comment..." name="comment"></textarea>
+          <div class="form-submit">
+            <button>Submit</button>
+          </div>
+        </form>
         <?php echo $display_comments ?>
       </div>
       <div class="col-side">
@@ -118,6 +127,6 @@
       </div>
     </div>
   </div>
-  <script src="../assets/scripts/announcement-scripts.js"></script>
+  <script src="./assets/scripts/announcement-scripts.js"></script>
 </body>
 </html>

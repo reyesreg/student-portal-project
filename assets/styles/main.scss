@@ -23,10 +23,25 @@ a {
   text-decoration: none;
 }
 
-input {
+input, textarea {
   font-family: 'Cabin', sans-serif;
   padding: 10px;
   border: 1px solid $border-color;
+  outline: none;
+}
+
+button {
+  border: none;
+  background: $lightGreen;
+  padding: 12px 18px;
+  color: white;
+  font-family: 'Cabin', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
 }
 
 ::-webkit-scrollbar {
@@ -70,6 +85,12 @@ h1 {
   flex: 2;
   display: flex;
 
+  textarea {
+    width: calc(100% - 120px);
+    margin: 0px 60px 0 60px;
+    margin-bottom: 20px;
+  }
+
   .col-side {
     &:first-child {
       max-width: 220px;
@@ -111,6 +132,7 @@ h1 {
     overflow: auto;
     border-left: 1px solid $border-color;
     border-right: 1px solid $border-color;
+    padding-bottom: 40px;
   }
 
   .box {
@@ -169,6 +191,7 @@ h1 {
 
   .media-buttons {
     float:right;
+    display: flex;
   }
 }
 
@@ -179,18 +202,24 @@ h1 {
   margin-right: 5px;
 }
 
-  .announcement-wrapper {
-    margin: 40px 60px;
+.form-submit {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 60px;
+}
 
-    p {
-      margin-top: 40px;
-      line-height: 28px;
-    }
+.announcement-wrapper {
+  margin: 40px 60px;
 
-    .card-footer {
-      margin-top: 40px;
-    }
+  p {
+    margin-top: 40px;
+    line-height: 28px;
   }
+
+  .card-footer {
+    margin-top: 40px;
+  }
+}
 
   .calendar {
     margin: 40px 20px 20px 20px;
