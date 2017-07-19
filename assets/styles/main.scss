@@ -15,11 +15,11 @@ html, body, .container {
   background: #f6f6f6;
   font-family: 'Cabin', sans-serif;
   color: #777;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 a {
-  color: #777;
+  color: $lightGreen;
   text-decoration: none;
 }
 
@@ -27,27 +27,6 @@ input {
   font-family: 'Cabin', sans-serif;
   padding: 10px;
   border: 1px solid $border-color;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.nav {
-  height: 80px;
-  border-bottom: 1px solid $border-color;
-  display: flex;
-  align-items: center;
-  padding: 0 40px 0 40px;
-
-  .logo-title {
-    margin-left: 20px;
-    font-size: 24px;
-    color: $green;
-    font-weight: bold;
-  }
 }
 
 ::-webkit-scrollbar {
@@ -60,6 +39,31 @@ input {
 
 ::-webkit-scrollbar-thumb {
     background: #d9d9d9;
+}
+
+h1 {
+  color: $lightGreen;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.nav {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 40px 0 40px;
+  background: $green;
+
+  .logo-title {
+    margin-left: 20px;
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+  }
 }
 
 .content, {
@@ -83,12 +87,13 @@ input {
       list-style: none;
       padding: 0;
       margin: 0;
+      font-size: 14px;
 
       li {
         padding: 20px 20px;
 
         &.active {
-          background: $lightGreen;
+          background: $green;
 
           a {
             color: white;
@@ -98,6 +103,7 @@ input {
     }
 
     overflow: hidden;
+    background: #efefef;
   }
 
   .col-main {
@@ -108,23 +114,16 @@ input {
   }
 
   .box {
-    margin: 40px;
+    margin: 40px 60px;
     border: 1px solid $border-color;
     padding: 20px;
     background: #f2f2f2;
 
     .title {
       font-weight: bold;
-      font-size: 16px;
-      color: #444;
-      margin-bottom: 12px;
-    }
-
-    .tag {
-      padding: 5px 10px 5px 10px;
-      background: #d9d9d9;
-      border-radius: 5px;
-      margin-right: 5px;
+      font-size: 18px;
+      color: $lightGreen;
+      margin-bottom: 20px;
     }
 
     .date {
@@ -133,8 +132,8 @@ input {
     }
 
     .message {
-      margin-top: 20px;
-      line-height: 22px;
+      margin: 30px 0;
+      line-height: 25px;
     }
 
     .read-more {
@@ -143,25 +142,60 @@ input {
       cursor: pointer;
     }
 
-    .card-footer {
-      display: flex; 
-      justify-content: space-between;
-      margin-top: 20px;
+    .avatar {
+      height: 20px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
 
-      .media-buttons {
-        float:right;
+    p {
+      line-height: 25px;
+    }
+    
+    .comment-details {
+      display: flex;
+      justify-content: space-between;
+
+      div {
+        display: flex;
       }
     }
   }
 
+.card-footer {
+  display: flex; 
+  justify-content: space-between;
+  margin-top: 20px;
+
+  .media-buttons {
+    float:right;
+  }
+}
+
+.tag {
+  padding: 5px 10px 5px 10px;
+  background: #d9d9d9;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
   .announcement-wrapper {
-    margin: 40px;
+    margin: 40px 60px;
+
+    p {
+      margin-top: 40px;
+      line-height: 28px;
+    }
+
+    .card-footer {
+      margin-top: 40px;
+    }
   }
 
   .calendar {
     margin: 40px 20px 20px 20px;
     height: 200px;
-    background: #f2f2f2;
+    background: #f6f6f6;
     border: 1px solid #d9d9d9;
   }
 }
