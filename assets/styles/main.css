@@ -69,11 +69,17 @@ h1 {
     font-size: 24px;
     color: white;
     font-weight: bold; }
-  .nav .login-wrapper {
+  .nav form {
     display: flex;
-    align-items: center; }
+    align-items: center;
+    color: white; }
+  .nav i {
+    cursor: pointer; }
   .nav input {
-    padding: 8px; }
+    padding: 8px;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: 1px solid transparent; }
 
 .content {
   flex: 2;

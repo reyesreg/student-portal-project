@@ -91,13 +91,21 @@ h1 {
     font-weight: bold;
   }
 
-  .login-wrapper {
+  form {
     display: flex;
     align-items: center;
+    color: white;
+  }
+
+  i {
+    cursor: pointer;
   }
 
   input {
     padding: 8px;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: 1px solid transparent;
   }
 }
 
