@@ -1,5 +1,4 @@
 <?php
-  include('./php/_config.php');
 
   $id = '';
   if (isset($_REQUEST['id'])) {
@@ -72,6 +71,20 @@
       $tag = $row_tags['catName'];
       
       $display_tags .= "<span class='tag'>$tag</span>";
+    }
+    
+    $display_comment_box = "";
+    if(isset($_SESSION['uID'])) {
+      $uID = $_SESSION['uID'];
+
+      $display_comment_box = "
+        <form method='POST' action=''>
+          <textarea rows='5' placeholder='Write a comment...' name='comment'></textarea>
+          <div class='form-submit'>
+            <button>Submit Comment</button>
+          </div>
+        </form>
+      ";
     }
   }
 
