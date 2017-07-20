@@ -2,6 +2,9 @@
 * {
   box-sizing: border-box; }
 
+form {
+  margin: 0; }
+
 html, body, .container {
   margin: 0;
   padding: 0;
@@ -55,12 +58,22 @@ h1 {
   display: flex;
   align-items: center;
   padding: 0 40px 0 40px;
-  background: #076136; }
+  background: #076136;
+  justify-content: space-between; }
+  .nav .logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
   .nav .logo-title {
     margin-left: 20px;
     font-size: 24px;
     color: white;
     font-weight: bold; }
+  .nav .login-wrapper {
+    display: flex;
+    align-items: center; }
+  .nav input {
+    padding: 8px; }
 
 .content {
   flex: 2;
