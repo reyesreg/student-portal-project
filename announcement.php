@@ -49,7 +49,7 @@
       $display_comments .= "
         <div class='box'>
           <div class='comment-details'>
-            <div>
+            <div style='display: flex; align-items: center;'>
               <img class='avatar' src='.$commentImg'/>
               <span>$commentFirstName $commentLastName</span>
             </div>
