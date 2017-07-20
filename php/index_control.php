@@ -2,6 +2,7 @@
   include('./php/_config.php');
 
   #get public announcements
+  #TODO: limit to upcoming 5
   $display_announcements = "";
   $get_announcements = "SELECT 
     a.title, 
