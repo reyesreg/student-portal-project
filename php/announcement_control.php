@@ -78,8 +78,9 @@
       $uID = $_SESSION['uID'];
 
       $display_comment_box = "
-        <form method='POST' action=''>
+        <form method='POST' action='./php/inv_controllers/add_comment.php'>
           <textarea rows='5' placeholder='Write a comment...' name='comment'></textarea>
+          <input type='hidden' name='anID' value='$id'>
           <div class='form-submit'>
             <button>Submit Comment</button>
           </div>
