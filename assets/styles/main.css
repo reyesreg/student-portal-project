@@ -19,6 +19,13 @@ a {
   color: #0b8e4f;
   text-decoration: none; }
 
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #d9d9d9;
+  padding: 0; }
+
 input, textarea {
   font-family: 'Cabin', sans-serif;
   padding: 10px;
@@ -64,7 +71,8 @@ h1 {
   .nav .logo-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    cursor: pointer; }
   .nav .logo-title {
     margin-left: 20px;
     font-size: 24px;
@@ -103,18 +111,23 @@ h1 {
       padding: 0;
       margin: 0;
       font-size: 14px; }
-      .content .col-side ul li {
+      .content .col-side ul li a {
+        text-decoration: none;
+        width: 100%;
+        display: flex;
         padding: 20px 20px; }
-        .content .col-side ul li.active {
-          background: #076136; }
-          .content .col-side ul li.active a {
-            color: white; }
+      .content .col-side ul li.active {
+        background: #076136; }
+        .content .col-side ul li.active a {
+          color: white; }
   .content .col-main {
     flex: 7;
     overflow: auto;
     border-left: 1px solid #d9d9d9;
     border-right: 1px solid #d9d9d9;
     padding-bottom: 40px; }
+  .content .user-tags {
+    margin: 40px 60px; }
   .content .box {
     margin: 40px 60px;
     border: 1px solid #d9d9d9;
@@ -160,9 +173,12 @@ h1 {
       display: flex; }
   .content .tag {
     padding: 5px 10px 5px 10px;
-    background: #d9d9d9;
+    background: #ddd;
     border-radius: 5px;
     margin-right: 5px; }
+  .content .subbed {
+    background: #0b8e4f;
+    color: white; }
   .content .form-submit {
     display: flex;
     justify-content: flex-end;

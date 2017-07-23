@@ -4,17 +4,27 @@
     #if user is logged in
     $id = $_SESSION['uID'];
 
+    $display_categories_list = "
+      <div class='user-tags'>
+        Subscribed&nbsp;&nbsp;
+        <span class='tag subbed'>General</span>
+    ";
     $catArray = array(1);
     $catIndex = 1;
-    $get_categories = "SELECT catID 
-      FROM user_cat
+    $get_categories = "SELECT uc.catID, c.catName  
+      FROM user_cat uc 
+      INNER JOIN categories c ON uc.catID=c.catID  
       WHERE uID=$id";
     $result_categories = $con->query($get_categories) or die(mysqli_error($con));
     while($row_categories = mysqli_fetch_array($result_categories)) {
       $catID = $row_categories['catID'];
+      $catName = $row_categories['catName'];
       $catArray[$catIndex] = $catID;
+      $display_categories_list .= "<span class='tag subbed'>$catName</span>";
       $catIndex++;
     }
+
+    $display_categories_list .= "</div>";
     
     $display_announcements = "";
     $get_announcements = "SELECT 
@@ -42,7 +52,7 @@
       while($row_ac = mysqli_fetch_array($result_ac)) {
         $catName = $row_ac['catName'];
 
-        $display_categories .= "<span class='tag'>$catName</span>";
+        $display_categories .= "<span class='tag subbed'>$catName</span>";
       }
 
       $display_announcements .= "
@@ -75,6 +85,7 @@
     #TODO: limit to upcoming 5
 
     $display_announcements = "";
+    $display_categories_list = "";
     $get_announcements = "SELECT 
       a.title, 
       a.description, 
@@ -94,7 +105,7 @@
         <div class='box'>
           <div class='date'>$dateCreated</div>
           <div class='title'>$title</div>
-          <span class='tag'>General</span>
+          <span class='tag subbed'>General</span>
           <div class='message'>
             $description
           </div>

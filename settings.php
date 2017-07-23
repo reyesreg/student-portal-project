@@ -1,8 +1,8 @@
 <?php
   include_once('./views/main/header.php');
-  include_once('./php/index_control.php');
+  include_once('./php/announcement_control.php');
 ?>
-        <?php echo $display_categories_list . $display_announcements ?>
+        
       </div>
       <div class="col-side">
         <div class="calendar"></div>

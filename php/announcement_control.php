@@ -70,7 +70,7 @@
     while($row_tags = mysqli_fetch_array($result_tags)) {
       $tag = $row_tags['catName'];
       
-      $display_tags .= "<span class='tag'>$tag</span>";
+      $display_tags .= "<span class='tag subbed'>$tag</span>";
     }
     
     $display_comment_box = "";

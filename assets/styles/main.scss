@@ -27,6 +27,14 @@ a {
   text-decoration: none;
 }
 
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #d9d9d9;
+    padding: 0; 
+}
+
 input, textarea {
   font-family: 'Cabin', sans-serif;
   padding: 10px;
@@ -83,6 +91,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
   }
 
   .logo-title {
@@ -140,7 +149,13 @@ h1 {
       font-size: 14px;
 
       li {
-        padding: 20px 20px;
+
+        a {
+          text-decoration: none;
+          width: 100%;
+          display: flex;
+          padding: 20px 20px;
+        }
 
         &.active {
           background: $green;
@@ -162,6 +177,10 @@ h1 {
     border-left: 1px solid $border-color;
     border-right: 1px solid $border-color;
     padding-bottom: 40px;
+  }
+
+  .user-tags {
+    margin: 40px 60px;
   }
 
   .box {
@@ -231,9 +250,14 @@ h1 {
 
 .tag {
   padding: 5px 10px 5px 10px;
-  background: #d9d9d9;
+  background: #ddd;
   border-radius: 5px;
   margin-right: 5px;
+}
+
+.subbed {
+  background: $lightGreen;
+  color: white;
 }
 
 .form-submit {
