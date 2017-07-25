@@ -1,6 +1,6 @@
 <?php
   session_start();
-  include('../_config.php');
+  include('../../_config.php');
 
   if (isset($_SESSION['uID'])) {
     $uID = $_SESSION['uID'];
@@ -18,9 +18,9 @@
         NULL,
         'active')";
       $con->query($add_comment) or die(mysqli_error($con));
-      header('location: ../../announcement.php?id='. $anID);
+      header('location: ../../../announcement.php?id='. $anID);
     }
   } else {
-    header('location: ../../index.php');
+    header('location: ../../../index.php');
   }
 ?>

@@ -11,7 +11,9 @@
     ";
     $catArray = array(1);
     $catIndex = 1;
-    $get_categories = "SELECT uc.catID, c.catName  
+    $get_categories = "SELECT 
+      uc.catID, 
+      c.catName 
       FROM user_cat uc 
       INNER JOIN categories c ON uc.catID=c.catID  
       WHERE uID=$id";

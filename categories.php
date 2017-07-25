@@ -1,23 +1,19 @@
 <?php
   include_once('./views/main/header.php');
-  #include_once('./php/categories_control.php');
+  include_once('./php/categories_control.php');
 ?>
-        <div>
-            <div>
-              Subscribed Categories
-              <table>
-                <tr>
-                  <td><span class="tag subbed">General</span></td>
-                  <td>Open to the public and cannot be disabled</td>
-                </tr>
-                <tr>
-                  <td><span class="tag subbed">SMIT</span></td>
-                  <td>All announcements related to SMIT</td>
-                </tr>
-              </table>
+        <div class="cat-wrapper">
+            <div class="cat-sub-wrapper">
+              This section displays categories wherein users can subscribe or unsubscribe to announcements shown on the homepage.
+              <hr/>
             </div>
-            <div>
-              All Categories
+            <div class="cat-sub-wrapper">
+              <h3>Your Subscriptions (<?php echo $catUserCount ?>)</h3>
+              <?php echo $display_sub ?>
+            </div>
+            <div class="cat-sub-wrapper">
+              <h3>All Categories (<?php echo $catAllCount ?>)</h3>
+              <?php echo $display_unsub ?>
             </div>
         </div>
       </div>
@@ -28,6 +24,6 @@
   </div>
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="./assets/scripts/announcement-scripts.js"></script>
-  <script src="./assets/scripts/main.js"></script>
+  <script src="./assets/scripts/user_func.js"></script>
 </body>
 </html>

@@ -175,7 +175,8 @@ h1 {
     padding: 5px 10px 5px 10px;
     background: #ddd;
     border-radius: 5px;
-    margin-right: 5px; }
+    margin-right: 5px;
+    cursor: pointer; }
   .content .subbed {
     background: #0b8e4f;
     color: white; }
@@ -195,5 +196,15 @@ h1 {
     height: 200px;
     background: #f6f6f6;
     border: 1px solid #d9d9d9; }
+  .content .cat-wrapper {
+    display: flex;
+    flex-direction: column; }
+    .content .cat-wrapper .cat-sub-wrapper {
+      padding: 10px 60px; }
+      .content .cat-wrapper .cat-sub-wrapper:first-child {
+        padding-top: 40px;
+        padding-bottom: 0; }
+    .content .cat-wrapper td {
+      padding: 10px; }
 
 /*# sourceMappingURL=main.css.map */
