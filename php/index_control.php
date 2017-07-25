@@ -36,7 +36,8 @@
       a.anID
       FROM an_cat ac
       INNER JOIN announcements a ON a.anID = ac.anID
-      WHERE ac.catID IN (".implode(',',$catArray).")";
+      WHERE ac.catID IN (".implode(',',$catArray).")
+      AND a.status='approved'";
     $result_announcements = $con->query($get_announcements) or die(mysqli_error($con));
     while($row_announcements = mysqli_fetch_array($result_announcements)) {
       $title = $row_announcements['title'];
@@ -95,7 +96,8 @@
       a.anID 
       FROM an_cat ac
       INNER JOIN announcements a ON a.anID = ac.anID
-      WHERE ac.catID = 1";
+      WHERE ac.catID = 1
+      AND a.status='approved'";
     $result_announcements = $con->query($get_announcements) or die(mysqli_error($con));
     while($row_announcements = mysqli_fetch_array($result_announcements)) {
       $title = $row_announcements['title'];
