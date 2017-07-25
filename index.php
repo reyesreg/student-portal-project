@@ -1,5 +1,5 @@
 <?php
-  include_once('./views/main/header.php');
+  include_once('./includes/main/header.php');
   include_once('./php/index_control.php');
 ?>
         <?php echo $display_categories_list . $display_announcements ?>

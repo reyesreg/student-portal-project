@@ -19,6 +19,6 @@
     </div>
     <div class="content">
       <div class="col-side">
-        <?php include_once('./views/main/sidebar-student.php'); ?>
+        <?php include_once('./includes/main/sidebar-student.php'); ?>
       </div>
       <div class="col-main">

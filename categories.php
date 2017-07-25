@@ -1,5 +1,5 @@
 <?php
-  include_once('./views/main/header.php');
+  include_once('./includes/main/header.php');
   include_once('./php/categories_control.php');
 ?>
         <div class="cat-wrapper">
