@@ -22,22 +22,20 @@
   ?>
 
   <li id="li-links" <?php if($route[2]=='links.php') echo 'class="active"' ?>><a href="./links.php">LINKS</a></li>
+  <li id="li-links" <?php if($route[2]=='settings.php') echo 'class="active"' ?>><a href="./settings.php">SETTINGS</a></li>
 
   <?php
     if($user_type === 'super_mod'|| $user_type === 'student_mod') {
-      echo "<li";
-      if($route[2]=='settings.php') 
-        echo ' class="active"';
-      echo ">
-              <a href='./settings.php'>SETTINGS</a>
-            </li> 
+      echo "
             <hr />
-            <li>
-              <a href='#'>MANAGE POSTS</a>
+            <li";
+          if($route[2]=='posts-manage.php') 
+            echo ' class="active"';
+          echo "><a href='./posts-manage.php'>MANAGE POSTS</a>
             </li>";
     }
     if($user_type === 'super_mod') {
-      echo "<li><a href='#'>MANAGE USERS</a></li>";
+      echo "<li><a href='./users-manage.php'>MANAGE USERS</a></li>";
     }
   ?>
 </ul>
