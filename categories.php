@@ -22,6 +22,7 @@
       </div>
     </div>
   </div>
-  <script src="./assets/scripts/announcement-scripts.js"></script>
+  <script src="./assets/scripts/social.js"></script>
+  <script src="./assets/scripts/user_func.js"></script>
 </body>
 </html>
