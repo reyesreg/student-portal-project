@@ -39,7 +39,10 @@ button {
   color: white;
   font-family: 'Cabin', sans-serif;
   font-size: 16px;
-  cursor: pointer; }
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
   button:hover {
     opacity: 0.9; }
 
@@ -206,5 +209,61 @@ h1 {
         padding-bottom: 0; }
     .content .cat-wrapper td {
       padding: 10px; }
+
+/*tabs*/
+/* Style the tab */
+div.tab {
+  overflow: hidden;
+  border-bottom: 1px solid #d9d9d9; }
+
+/* Style the buttons inside the tab */
+div.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #777;
+  border: 1px solid transparent;
+  border-bottom: none; }
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+  color: #0b8e4f; }
+
+/* Create an active/current tablink class */
+div.tab button.active {
+  border: 1px solid #d9d9d9;
+  border-bottom: 1px solid #f2f2f2;
+  color: #0b8e4f;
+  background: #f2f2f2; }
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  border-top: none; }
+  .tabcontent table {
+    width: 100%; }
+    .tabcontent table th {
+      padding-top: 20px !important;
+      color: #0b8e4f;
+      text-align: left;
+      padding: 10px;
+      background-color: #f6f6f6 !important; }
+    .tabcontent table tr:nth-child(odd) {
+      background-color: #ededed; }
+    .tabcontent table td {
+      padding: 5px !important;
+      font-size: 14px; }
+      .tabcontent table td i {
+        cursor: pointer; }
+        .tabcontent table td i:hover {
+          color: #0b8e4f; }
+      .tabcontent table td.title {
+        cursor: pointer; }
+        .tabcontent table td.title:hover {
+          background: #0b8e4f;
+          color: white; }
 
 /*# sourceMappingURL=main.css.map */
