@@ -5,8 +5,8 @@
     if ($_SESSION['uType'] !== 'student' && $_SESSION['uType'] !== 'personnel') {
 
       $display_sub = "";
-      $catArray = array(1);
-      $catCount = 1;
+      $catArray = array();
+      $catCount = 0;
 
       $get_user_categories = "SELECT 
         mc.catID, c.catName, mc.uID 
@@ -20,6 +20,7 @@
         $mcID = $row_user_categories['uID'];
 
         $catArray[$catCount] = $catID;
+        $catCount++;
 
         if($mcID == $id) {
           $display_sub .= "<span class='tag subbed'>$catName</span>";
@@ -30,27 +31,27 @@
       $display_approved = "";
       $display_archived = "";
 
-      $get_pending_an = "SELECT 
+      $get_an = "SELECT 
         a.anID, 
         a.title,
         u.firstName, 
         u.lastName, 
         a.dateCreated, 
-        a.status 
+        a.status, 
+        a.approverID 
         FROM announcements a
         INNER JOIN an_cat ac ON a.anID=ac.anID 
         INNER JOIN users u ON u.uID=a.authorID 
         WHERE ac.catID IN (".implode(',',$catArray).")";
 
-      $result_pending_an = $con->query($get_pending_an) or die(mysqli_error($con));
-      while($row_pending_an = mysqli_fetch_array($result_pending_an)) {
-        $anID = $row_pending_an['anID'];
-        $title = $row_pending_an['title'];
-        $fname = $row_pending_an['firstName'];
-        $lname = $row_pending_an['lastName'];
-        $date = $row_pending_an['dateCreated'];
-        $status = $row_pending_an['status'];
-        #TODO: $approverID = $row_pending_an['approverID'];
+      $result_an = $con->query($get_an) or die(mysqli_error($con));
+      while($row_an = mysqli_fetch_array($result_an)) {
+        $anID = $row_an['anID'];
+        $title = $row_an['title'];
+        $fname = $row_an['firstName'];
+        $lname = $row_an['lastName'];
+        $date = $row_an['dateCreated'];
+        $status = $row_an['status'];
         
         if($status == 'pending') {
           $display_pending .= "
