@@ -69,6 +69,7 @@
   </div>
   <?php
     include_once('./includes/modals/approve-post.php');
+    include_once('./includes/modals/archive-post.php');
   ?>
   <script src="./assets/scripts/tabs.js"></script>
   <script src="./assets/scripts/admin_func.js"></script>

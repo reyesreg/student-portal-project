@@ -62,7 +62,7 @@
               <td align='center'>
                 <i class='material-icons' onclick='openApproveModal($anID)'>check_circle</i>
                 &nbsp;&nbsp;
-                <i class='material-icons'>cancel</i>
+                <i class='material-icons' onclick='openArchiveModal($anID)'>cancel</i>
               </td>
             </tr>
           ";
@@ -74,7 +74,7 @@
               <td>$fname $lname</td>
               <td>$date</td>
               <td align='center'>
-                <i class='material-icons'>cancel</i>
+                <i class='material-icons' onclick='openArchiveModal($anID)'>cancel</i>
               </td>
             </tr>
           ";
@@ -86,7 +86,7 @@
               <td>$fname $lname</td>
               <td>$date</td>
               <td align='center'>
-                <i class='material-icons'>check_circle</i>
+                <i class='material-icons' onclick='openApproveModal($anID)'>check_circle</i>
               </td>
             </tr>
           ";

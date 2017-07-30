@@ -308,5 +308,7 @@ div.tab button.active {
           color: #777; }
   .lightbox#approve-post {
     display: none; }
+  .lightbox#archive-post {
+    display: none; }
 
 /*# sourceMappingURL=main.css.map */
