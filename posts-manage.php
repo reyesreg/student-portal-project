@@ -5,7 +5,6 @@
           <div class="cat-wrapper">
             <div class="cat-sub-wrapper" style="padding-bottom: 30px;">
               Moderated Categories&nbsp;&nbsp;<?php echo $display_sub ?>
-              <div style="float:right;"><button><i class="material-icons">add_circle_outline</i>&nbsp;&nbsp;New Post</button></div>
             </div>
             <div class="cat-sub-wrapper">
               <div class="tab">

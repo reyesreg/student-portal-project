@@ -15,7 +15,7 @@
   </li>
 
   <?php
-    if($user_type === 'student'|| $user_type === 'student_mod') {
+    if($user_type !== '') {
       echo "<li";
       if($route[2]=='categories.php') 
         echo ' class="active"';
@@ -24,7 +24,7 @@
   ?>
 
   <li id="li-links" <?php if($route[2]=='links.php') echo 'class="active"' ?>><a href="./links.php">LINKS</a></li>
-  <li id="li-links" <?php if($route[2]=='settings.php') echo 'class="active"' ?>><a href="./settings.php">SETTINGS</a></li>
+  <li id="li-links" <?php if($route[2]=='profile.php') echo 'class="active"' ?>><a href="./profile.php">PROFILE</a></li>
 
   <?php
     if($user_type !== "") {
@@ -32,7 +32,7 @@
             <li id='li-links'";
       if($route[2]=='submit.php') 
         echo ' class="active"';
-      echo "><a href='./submit.php'>
+      echo "><a href='./submit.php' style='color: #0b8e4f'>
         <i class='material-icons'>add_circle</i>&nbsp;&nbsp;SUBMIT POST</a>
       </li>";
     }
