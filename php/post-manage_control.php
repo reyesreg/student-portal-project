@@ -55,38 +55,38 @@
         if($status == 'pending') {
           $display_pending .= "
             <tr>
-              <td class='title'>$title</td>
+              <td class='title'><a href='./announcement.php?id=$anID'>$title</a></td>
               <td></td>
               <td>$fname $lname</td>
               <td>$date</td>
               <td align='center'>
-                <i class='material-icons'>add_circle</i>
+                <i class='material-icons' onclick='openApproveModal($anID)'>check_circle</i>
                 &nbsp;&nbsp;
-                <i class='material-icons'>remove_circle</i>
+                <i class='material-icons'>cancel</i>
               </td>
             </tr>
           ";
         } else if($status == 'approved') {
           $display_approved .= "
             <tr>
-              <td class='title'>$title</td>
+              <td class='title'><a href='./announcement.php?id=$anID'>$title</a></td>
               <td></td>
               <td>$fname $lname</td>
               <td>$date</td>
               <td align='center'>
-                <i class='material-icons'>remove_circle</i>
+                <i class='material-icons'>cancel</i>
               </td>
             </tr>
           ";
         } else if($status == 'archived') {
           $display_archived .= "
             <tr>
-              <td class='title'>$title</td>
+              <td class='title'><a href='./announcement.php?id=$anID'>$title</a></td>
               <td></td>
               <td>$fname $lname</td>
               <td>$date</td>
               <td align='center'>
-                <i class='material-icons'>add_circle</i>
+                <i class='material-icons'>check_circle</i>
               </td>
             </tr>
           ";

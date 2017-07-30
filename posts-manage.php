@@ -67,7 +67,10 @@
       </div>
     </div>
   </div>
-  <script src="./assets/scripts/social.js"></script>
+  <?php
+    include_once('./includes/modals/approve-post.php');
+  ?>
   <script src="./assets/scripts/tabs.js"></script>
+  <script src="./assets/scripts/admin_func.js"></script>
 </body>
 </html>

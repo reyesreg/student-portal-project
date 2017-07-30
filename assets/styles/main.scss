@@ -158,13 +158,16 @@ h1 {
           width: 100%;
           display: flex;
           padding: 20px 20px;
+          align-items: center;
+          font-weight: bold;
+          color: inherit;
         }
 
         &.active {
-          background: $green;
+          background: #d9d9d9;
 
           a {
-            color: white;
+            color: $lightGreen;
           }
         }
       }
@@ -378,10 +381,68 @@ div.tab button.active {
           cursor: pointer;
 
           &:hover {
-            background: $lightGreen;
-            color: white;
+            font-weight: bold;
           }
         }
       }
     }
+}
+
+/*modal*/
+
+.lightbox {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  .modal {
+    background-color: white;
+    display: initial;
+    margin-top: -40px;
+    border-radius: 5px;
+    min-width: 300px;
+
+    hr {
+      margin: 0;
+    }
+
+    .title {
+      background: $lightGreen;
+      padding: 20px;
+      color: white;
+      border-radius: 5px 5px 0 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .body {
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    .actions {
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+
+      button {
+        margin: 0 20px;
+
+        &.cancel {
+          background: #d9d9d9;
+          color: #777;
+        }
+      }
+    }
+  }
+
+  /*MODAL TYPES*/
+  &#approve-post {
+    display: none;
+  }
 }

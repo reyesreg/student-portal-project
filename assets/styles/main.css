@@ -118,11 +118,14 @@ h1 {
         text-decoration: none;
         width: 100%;
         display: flex;
-        padding: 20px 20px; }
+        padding: 20px 20px;
+        align-items: center;
+        font-weight: bold;
+        color: inherit; }
       .content .col-side ul li.active {
-        background: #076136; }
+        background: #d9d9d9; }
         .content .col-side ul li.active a {
-          color: white; }
+          color: #0b8e4f; }
   .content .col-main {
     flex: 7;
     overflow: auto;
@@ -263,7 +266,47 @@ div.tab button.active {
       .tabcontent table td.title {
         cursor: pointer; }
         .tabcontent table td.title:hover {
-          background: #0b8e4f;
-          color: white; }
+          font-weight: bold; }
+
+/*modal*/
+.lightbox {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*MODAL TYPES*/ }
+  .lightbox .modal {
+    background-color: white;
+    display: initial;
+    margin-top: -40px;
+    border-radius: 5px;
+    min-width: 300px; }
+    .lightbox .modal hr {
+      margin: 0; }
+    .lightbox .modal .title {
+      background: #0b8e4f;
+      padding: 20px;
+      color: white;
+      border-radius: 5px 5px 0 0;
+      display: flex;
+      align-items: center; }
+    .lightbox .modal .body {
+      padding: 20px;
+      font-size: 14px; }
+    .lightbox .modal .actions {
+      padding: 15px;
+      display: flex;
+      justify-content: center; }
+      .lightbox .modal .actions button {
+        margin: 0 20px; }
+        .lightbox .modal .actions button.cancel {
+          background: #d9d9d9;
+          color: #777; }
+  .lightbox#approve-post {
+    display: none; }
 
 /*# sourceMappingURL=main.css.map */

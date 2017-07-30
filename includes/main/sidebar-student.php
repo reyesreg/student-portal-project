@@ -10,7 +10,9 @@
 
 <input type="text" placeholder="Search..."/>
 <ul>
-  <li id="li-home" <?php if($route[2]=='' || $route[2]=='index.php') echo 'class="active"' ?>><a href="./">HOME</a></li>
+  <li id="li-home" <?php if($route[2]=='' || $route[2]=='index.php') echo 'class="active"' ?>>
+    <a href="./">HOME</a>
+  </li>
 
   <?php
     if($user_type === 'student'|| $user_type === 'student_mod') {
@@ -28,9 +30,11 @@
     if($user_type !== "") {
       echo "<hr />
             <li id='li-links'";
-      if($route[2]=='categories.php') 
+      if($route[2]=='submit.php') 
         echo ' class="active"';
-      echo "><a href='./categories.php'>SUBMIT CONTENT</a></li>";
+      echo "><a href='./submit.php'>
+        <i class='material-icons'>add_circle</i>&nbsp;&nbsp;SUBMIT POST</a>
+      </li>";
     }
   ?>
 
