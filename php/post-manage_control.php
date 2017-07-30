@@ -55,11 +55,11 @@
         if($status == 'pending') {
           $display_pending .= "
             <tr>
-              <td width='30%' class='title'>$title</td>
-              <td width='30%'></td>
-              <td width='20%'>$fname $lname</td>
-              <td width='10%'>$date</td>
-              <td align='center' width='10%'>
+              <td class='title'>$title</td>
+              <td></td>
+              <td>$fname $lname</td>
+              <td>$date</td>
+              <td align='center'>
                 <i class='material-icons'>add_circle</i>
                 &nbsp;&nbsp;
                 <i class='material-icons'>remove_circle</i>
@@ -69,11 +69,11 @@
         } else if($status == 'approved') {
           $display_approved .= "
             <tr>
-              <td width='30%' class='title'>$title</td>
-              <td width='30%'></td>
-              <td width='20%'>$fname $lname</td>
-              <td width='10%'>$date</td>
-              <td align='center' width='10%'>
+              <td class='title'>$title</td>
+              <td></td>
+              <td>$fname $lname</td>
+              <td>$date</td>
+              <td align='center'>
                 <i class='material-icons'>remove_circle</i>
               </td>
             </tr>
@@ -81,11 +81,11 @@
         } else if($status == 'archived') {
           $display_archived .= "
             <tr>
-              <td width='30%' class='title'>$title</td>
-              <td width='30%'></td>
-              <td width='20%'>$fname $lname</td>
-              <td width='10%'>$date</td>
-              <td align='center' width='10%'>
+              <td class='title'>$title</td>
+              <td></td>
+              <td>$fname $lname</td>
+              <td>$date</td>
+              <td align='center'>
                 <i class='material-icons'>add_circle</i>
               </td>
             </tr>

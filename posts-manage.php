@@ -17,11 +17,11 @@
               <div id="pending" class="tabcontent">
                 <table>
                   <thead>
-                    <th>Title</th>
-                    <th>Categories</th>
-                    <th>Author</th>
-                    <th>Created</th>
-                    <th></th>
+                    <th width="30%">Title</th>
+                    <th width="30%">Categories</th>
+                    <th width="20%">Author</th>
+                    <th width="10%">Created</th>
+                    <th width="10%"></th>
                   </thead>
                   <tbody>
                     <?php echo $display_pending ?>
@@ -32,11 +32,11 @@
               <div id="approved" class="tabcontent">
                 <table>
                   <thead>
-                    <th>Title</th>
-                    <th>Categories</th>
-                    <th>Author</th>
-                    <th>Created</th>
-                    <th></th>
+                    <th width="30%">Title</th>
+                    <th width="30%">Categories</th>
+                    <th width="20%">Author</th>
+                    <th width="10%">Created</th>
+                    <th width="10%"></th>
                   </thead>
                   <tbody>
                     <?php echo $display_approved ?>
@@ -47,11 +47,11 @@
               <div id="archived" class="tabcontent">
                 <table>
                   <thead>
-                    <th>Title</th>
-                    <th>Categories</th>
-                    <th>Author</th>
-                    <th>Created</th>
-                    <th></th>
+                    <th width="30%">Title</th>
+                    <th width="30%">Categories</th>
+                    <th width="20%">Author</th>
+                    <th width="10%">Created</th>
+                    <th width="10%"></th>
                   </thead>
                   <tbody>
                     <?php echo $display_archived ?>

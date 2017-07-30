@@ -1,3 +1,5 @@
+//tab stuff
+
 document.getElementById("defaultOpen").click();
 
 function openTab(evt, tabName) {
