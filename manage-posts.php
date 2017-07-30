@@ -1,7 +1,8 @@
 <?php
   include_once('./includes/main/header.php');
-  include_once('./php/post-manage_control.php');
-?>        <div class="cat-wrapper">
+  include_once('./php/manage-posts_control.php');
+?>        
+          <div class="cat-wrapper">
             <div class="cat-sub-wrapper">
               <h1>Manage Posts</h1>
               <hr/>
@@ -19,7 +20,7 @@
               </div>
 
               <div id="pending" class="tabcontent">
-                <table>
+                <table class="pretty">
                   <thead>
                     <th width="30%">Title</th>
                     <th width="30%">Categories</th>
@@ -34,7 +35,7 @@
               </div>
 
               <div id="approved" class="tabcontent">
-                <table>
+                <table class="pretty">
                   <thead>
                     <th width="30%">Title</th>
                     <th width="30%">Categories</th>
@@ -49,7 +50,7 @@
               </div>
 
               <div id="archived" class="tabcontent">
-                <table>
+                <table class="pretty">
                   <thead>
                     <th width="30%">Title</th>
                     <th width="30%">Categories</th>

@@ -1,5 +1,5 @@
 <?php
-  //written spaghetti code
+  //ugly spaghetti code
 
   if (isset($_SESSION['uID'])) {
     $id = $_SESSION['uID'];

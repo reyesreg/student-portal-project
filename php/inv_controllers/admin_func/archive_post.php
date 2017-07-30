@@ -14,7 +14,7 @@
           WHERE anID=$anID";
           
         $con->query($approve_post) or die(mysqli_error($con));
-        header('location: ../../../posts-manage.php');
+        header('location: ../../../manage-posts.php');
       }
     } else {
       header('location: ../../../index.php');

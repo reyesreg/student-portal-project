@@ -43,13 +43,16 @@
       echo "
             <hr />
             <li";
-          if($route[2]=='posts-manage.php') 
+          if($route[2]=='manage-posts.php') 
             echo ' class="active"';
-          echo "><a href='./posts-manage.php'>MANAGE POSTS</a>
+          echo "><a href='./manage-posts.php'>MANAGE POSTS</a>
             </li>";
     }
     if($user_type === 'super_mod') {
-      echo "<li><a href='./users-manage.php'>MANAGE USERS</a></li>";
+      echo "<li";
+      if($route[2]=='manage-users.php') 
+        echo ' class="active"';
+      echo "><a href='./manage-users.php'>MANAGE USERS</a></li>";
     }
   ?>
 </ul>

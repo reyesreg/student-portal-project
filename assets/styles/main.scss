@@ -81,6 +81,43 @@ h1 {
   color: $lightGreen;
 }
 
+ .pretty {
+  width: 100%;
+
+  th {
+    padding-top: 20px !important;
+    color: $lightGreen;
+    text-align: left;
+    padding: 10px;
+    background-color: #f6f6f6 !important;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #ededed
+  }
+
+  td {
+    padding: 5px !important;
+    font-size: 14px;
+
+    i {
+      cursor: pointer;
+
+      &:hover {
+        color: $lightGreen;
+      }
+    }
+
+    &.title {
+      cursor: pointer;
+
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -323,6 +360,11 @@ h1 {
   }
 }
 
+table.user-table {
+  border: 1px solid #d9d9d9;
+  width: 100%;
+}
+
 /*tabs*/
 /* Style the tab */
 div.tab {
@@ -400,44 +442,6 @@ div.tab button.active {
     display: none;
     border: 1px solid #d9d9d9;
     border-top: none;
-    padding: 0px 20px 20px 20px;
-
-    table {
-      width: 100%;
-
-      th {
-        padding-top: 20px !important;
-        color: $lightGreen;
-        text-align: left;
-        padding: 10px;
-        background-color: #f6f6f6 !important;
-      }
-
-      tr:nth-child(odd) {
-        background-color: #ededed
-      }
-
-      td {
-        padding: 5px !important;
-        font-size: 14px;
-
-        i {
-          cursor: pointer;
-
-          &:hover {
-            color: $lightGreen;
-          }
-        }
-
-        &.title {
-          cursor: pointer;
-
-          &:hover {
-            font-weight: bold;
-          }
-        }
-      }
-    }
 }
 
 /*modal*/
