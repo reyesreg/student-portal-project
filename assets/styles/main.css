@@ -26,11 +26,12 @@ hr {
   border-top: 1px solid #d9d9d9;
   padding: 0; }
 
-input, textarea {
+input, textarea, select {
   font-family: 'Cabin', sans-serif;
   padding: 10px;
   border: 1px solid #d9d9d9;
-  outline: none; }
+  outline: none;
+  font-size: 14px; }
 
 button {
   border: none;
@@ -43,6 +44,9 @@ button {
   display: flex;
   align-items: center;
   justify-content: center; }
+  button.cancel {
+    background: #d9d9d9;
+    color: #777; }
   button:hover {
     opacity: 0.9; }
 
@@ -57,6 +61,28 @@ button {
 
 h1 {
   color: #0b8e4f; }
+
+.pretty {
+  width: 100%; }
+  .pretty th {
+    padding-top: 20px !important;
+    color: #0b8e4f;
+    text-align: left;
+    padding: 10px;
+    background-color: #f6f6f6 !important; }
+  .pretty tr:nth-child(odd) {
+    background-color: #ededed; }
+  .pretty td {
+    padding: 5px !important;
+    font-size: 14px; }
+    .pretty td i {
+      cursor: pointer; }
+      .pretty td i:hover {
+        color: #0b8e4f; }
+    .pretty td.title {
+      cursor: pointer; }
+      .pretty td.title:hover {
+        font-weight: bold; }
 
 .container {
   display: flex;
@@ -210,8 +236,15 @@ h1 {
       .content .cat-wrapper .cat-sub-wrapper:first-child {
         padding-top: 40px;
         padding-bottom: 0; }
+      .content .cat-wrapper .cat-sub-wrapper h1 {
+        margin-top: 0;
+        margin-bottom: 5px; }
     .content .cat-wrapper td {
       padding: 10px; }
+
+table.user-table {
+  border: 1px solid #d9d9d9;
+  width: 100%; }
 
 /*tabs*/
 /* Style the tab */
@@ -242,31 +275,34 @@ div.tab button.active {
   color: #0b8e4f;
   background: #f2f2f2; }
 
+.input-wrapper {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column; }
+  .input-wrapper label {
+    padding-bottom: 10px;
+    color: #0b8e4f; }
+
+#submit-post-form {
+  margin-top: 30px; }
+  #submit-post-form .box {
+    margin: 10px 0 0 0; }
+  #submit-post-form textarea {
+    margin: 0;
+    width: auto; }
+  #submit-post-form #selected-cat-wrapper {
+    display: flex; }
+  #submit-post-form button.submit {
+    float: right;
+    width: 200px; }
+  #submit-post-form button.add {
+    margin-left: 20px; }
+
 /* Style the tab content */
 .tabcontent {
   display: none;
+  border: 1px solid #d9d9d9;
   border-top: none; }
-  .tabcontent table {
-    width: 100%; }
-    .tabcontent table th {
-      padding-top: 20px !important;
-      color: #0b8e4f;
-      text-align: left;
-      padding: 10px;
-      background-color: #f6f6f6 !important; }
-    .tabcontent table tr:nth-child(odd) {
-      background-color: #ededed; }
-    .tabcontent table td {
-      padding: 5px !important;
-      font-size: 14px; }
-      .tabcontent table td i {
-        cursor: pointer; }
-        .tabcontent table td i:hover {
-          color: #0b8e4f; }
-      .tabcontent table td.title {
-        cursor: pointer; }
-        .tabcontent table td.title:hover {
-          font-weight: bold; }
 
 /*modal*/
 .lightbox {
@@ -303,12 +339,11 @@ div.tab button.active {
       justify-content: center; }
       .lightbox .modal .actions button {
         margin: 0 20px; }
-        .lightbox .modal .actions button.cancel {
-          background: #d9d9d9;
-          color: #777; }
   .lightbox#approve-post {
     display: none; }
   .lightbox#archive-post {
+    display: none; }
+  .lightbox#submit-post {
     display: none; }
 
 /*# sourceMappingURL=main.css.map */

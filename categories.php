@@ -4,7 +4,7 @@
 ?>
         <div class="cat-wrapper">
             <div class="cat-sub-wrapper">
-              This section displays categories wherein users can subscribe or unsubscribe to announcements shown on the homepage.
+              <h1>Categories</h1>
               <hr/>
             </div>
             <div class="cat-sub-wrapper">
@@ -22,7 +22,6 @@
       </div>
     </div>
   </div>
-  <script src="./assets/scripts/social.js"></script>
   <script src="./assets/scripts/user_func.js"></script>
 </body>
 </html>

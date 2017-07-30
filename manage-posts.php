@@ -1,11 +1,16 @@
 <?php
   include_once('./includes/main/header.php');
-  include_once('./php/post-manage_control.php');
-?>
+  include_once('./php/manage-posts_control.php');
+?>        
+          <div class="cat-wrapper">
+            <div class="cat-sub-wrapper">
+              <h1>Manage Posts</h1>
+              <hr/>
+            </div>
+          </div>
           <div class="cat-wrapper">
             <div class="cat-sub-wrapper" style="padding-bottom: 30px;">
               Moderated Categories&nbsp;&nbsp;<?php echo $display_sub ?>
-              <div style="float:right;"><button><i class="material-icons">add_circle_outline</i>&nbsp;&nbsp;New Post</button></div>
             </div>
             <div class="cat-sub-wrapper">
               <div class="tab">
@@ -15,7 +20,7 @@
               </div>
 
               <div id="pending" class="tabcontent">
-                <table>
+                <table class="pretty">
                   <thead>
                     <th width="30%">Title</th>
                     <th width="30%">Categories</th>
@@ -30,7 +35,7 @@
               </div>
 
               <div id="approved" class="tabcontent">
-                <table>
+                <table class="pretty">
                   <thead>
                     <th width="30%">Title</th>
                     <th width="30%">Categories</th>
@@ -45,7 +50,7 @@
               </div>
 
               <div id="archived" class="tabcontent">
-                <table>
+                <table class="pretty">
                   <thead>
                     <th width="30%">Title</th>
                     <th width="30%">Categories</th>
