@@ -1,5 +1,4 @@
 <?php
-  include('./php/_config.php');
 
   $id = '';
   if (isset($_REQUEST['id'])) {
@@ -71,7 +70,22 @@
     while($row_tags = mysqli_fetch_array($result_tags)) {
       $tag = $row_tags['catName'];
       
-      $display_tags .= "<span class='tag'>$tag</span>";
+      $display_tags .= "<span class='tag subbed'>$tag</span>";
+    }
+    
+    $display_comment_box = "";
+    if(isset($_SESSION['uID'])) {
+      $uID = $_SESSION['uID'];
+
+      $display_comment_box = "
+        <form method='POST' action='./php/inv_controllers/user_func/add_comment.php'>
+          <textarea rows='5' placeholder='Write a comment...' name='comment'></textarea>
+          <input type='hidden' name='anID' value='$id'>
+          <div class='form-submit'>
+            <button>Submit Comment</button>
+          </div>
+        </form>
+      ";
     }
   }
 

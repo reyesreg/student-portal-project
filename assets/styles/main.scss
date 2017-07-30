@@ -27,6 +27,14 @@ a {
   text-decoration: none;
 }
 
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #d9d9d9;
+    padding: 0; 
+}
+
 input, textarea {
   font-family: 'Cabin', sans-serif;
   padding: 10px;
@@ -42,6 +50,9 @@ button {
   font-family: 'Cabin', sans-serif;
   font-size: 16px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     opacity: 0.9;
@@ -77,11 +88,13 @@ h1 {
   padding: 0 40px 0 40px;
   background: $green;
   justify-content: space-between;
+  color: white;
 
   .logo-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
   }
 
   .logo-title {
@@ -129,7 +142,7 @@ h1 {
     }
 
     input {
-      margin: 40px 20px 40px 20px;
+      margin: 40px 20px 20px 20px;
     }
 
     ul {
@@ -139,13 +152,22 @@ h1 {
       font-size: 14px;
 
       li {
-        padding: 20px 20px;
+
+        a {
+          text-decoration: none;
+          width: 100%;
+          display: flex;
+          padding: 20px 20px;
+          align-items: center;
+          font-weight: bold;
+          color: inherit;
+        }
 
         &.active {
-          background: $green;
+          background: #d9d9d9;
 
           a {
-            color: white;
+            color: $lightGreen;
           }
         }
       }
@@ -161,6 +183,10 @@ h1 {
     border-left: 1px solid $border-color;
     border-right: 1px solid $border-color;
     padding-bottom: 40px;
+  }
+
+  .user-tags {
+    margin: 40px 60px;
   }
 
   .box {
@@ -184,6 +210,10 @@ h1 {
     .message {
       margin: 30px 0;
       line-height: 25px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
     }
 
     .read-more {
@@ -226,9 +256,15 @@ h1 {
 
 .tag {
   padding: 5px 10px 5px 10px;
-  background: #d9d9d9;
+  background: #ddd;
   border-radius: 5px;
   margin-right: 5px;
+  cursor: pointer;
+}
+
+.subbed {
+  background: $lightGreen;
+  color: white;
 }
 
 .form-submit {
@@ -255,5 +291,162 @@ h1 {
     height: 200px;
     background: #f6f6f6;
     border: 1px solid #d9d9d9;
+  }
+
+  .cat-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    .cat-sub-wrapper {
+      padding: 10px 60px;
+
+      &:first-child {
+        padding-top: 40px;
+        padding-bottom: 0;
+      }
+    }
+
+    td {
+      padding: 10px;
+    }
+  }
+}
+
+/*tabs*/
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #777;
+    border: 1px solid transparent;
+    border-bottom: none;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+  color: $lightGreen;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    border: 1px solid #d9d9d9;
+    border-bottom: 1px solid #f2f2f2;
+    color: $lightGreen;
+    background: #f2f2f2;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    border-top: none;
+
+    table {
+      width: 100%;
+
+      th {
+        padding-top: 20px !important;
+        color: $lightGreen;
+        text-align: left;
+        padding: 10px;
+        background-color: #f6f6f6 !important;
+      }
+
+      tr:nth-child(odd) {
+        background-color: #ededed
+      }
+
+      td {
+        padding: 5px !important;
+        font-size: 14px;
+
+        i {
+          cursor: pointer;
+
+          &:hover {
+            color: $lightGreen;
+          }
+        }
+
+        &.title {
+          cursor: pointer;
+
+          &:hover {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+}
+
+/*modal*/
+
+.lightbox {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  .modal {
+    background-color: white;
+    display: initial;
+    margin-top: -40px;
+    border-radius: 5px;
+    min-width: 300px;
+
+    hr {
+      margin: 0;
+    }
+
+    .title {
+      background: $lightGreen;
+      padding: 20px;
+      color: white;
+      border-radius: 5px 5px 0 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .body {
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    .actions {
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+
+      button {
+        margin: 0 20px;
+
+        &.cancel {
+          background: #d9d9d9;
+          color: #777;
+        }
+      }
+    }
+  }
+
+  /*MODAL TYPES*/
+  &#approve-post {
+    display: none;
+  }
+
+  &#archive-post {
+    display: none;
   }
 }

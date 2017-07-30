@@ -19,6 +19,13 @@ a {
   color: #0b8e4f;
   text-decoration: none; }
 
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #d9d9d9;
+  padding: 0; }
+
 input, textarea {
   font-family: 'Cabin', sans-serif;
   padding: 10px;
@@ -32,7 +39,10 @@ button {
   color: white;
   font-family: 'Cabin', sans-serif;
   font-size: 16px;
-  cursor: pointer; }
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
   button:hover {
     opacity: 0.9; }
 
@@ -59,11 +69,13 @@ h1 {
   align-items: center;
   padding: 0 40px 0 40px;
   background: #076136;
-  justify-content: space-between; }
+  justify-content: space-between;
+  color: white; }
   .nav .logo-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    cursor: pointer; }
   .nav .logo-title {
     margin-left: 20px;
     font-size: 24px;
@@ -96,24 +108,32 @@ h1 {
     .content .col-side:last-child {
       flex: 2; }
     .content .col-side input {
-      margin: 40px 20px 40px 20px; }
+      margin: 40px 20px 20px 20px; }
     .content .col-side ul {
       list-style: none;
       padding: 0;
       margin: 0;
       font-size: 14px; }
-      .content .col-side ul li {
-        padding: 20px 20px; }
-        .content .col-side ul li.active {
-          background: #076136; }
-          .content .col-side ul li.active a {
-            color: white; }
+      .content .col-side ul li a {
+        text-decoration: none;
+        width: 100%;
+        display: flex;
+        padding: 20px 20px;
+        align-items: center;
+        font-weight: bold;
+        color: inherit; }
+      .content .col-side ul li.active {
+        background: #d9d9d9; }
+        .content .col-side ul li.active a {
+          color: #0b8e4f; }
   .content .col-main {
     flex: 7;
     overflow: auto;
     border-left: 1px solid #d9d9d9;
     border-right: 1px solid #d9d9d9;
     padding-bottom: 40px; }
+  .content .user-tags {
+    margin: 40px 60px; }
   .content .box {
     margin: 40px 60px;
     border: 1px solid #d9d9d9;
@@ -129,7 +149,11 @@ h1 {
       font-size: 10px; }
     .content .box .message {
       margin: 30px 0;
-      line-height: 25px; }
+      line-height: 25px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical; }
     .content .box .read-more {
       font-style: italic;
       color: #0b8e4f;
@@ -155,9 +179,13 @@ h1 {
       display: flex; }
   .content .tag {
     padding: 5px 10px 5px 10px;
-    background: #d9d9d9;
+    background: #ddd;
     border-radius: 5px;
-    margin-right: 5px; }
+    margin-right: 5px;
+    cursor: pointer; }
+  .content .subbed {
+    background: #0b8e4f;
+    color: white; }
   .content .form-submit {
     display: flex;
     justify-content: flex-end;
@@ -174,5 +202,113 @@ h1 {
     height: 200px;
     background: #f6f6f6;
     border: 1px solid #d9d9d9; }
+  .content .cat-wrapper {
+    display: flex;
+    flex-direction: column; }
+    .content .cat-wrapper .cat-sub-wrapper {
+      padding: 10px 60px; }
+      .content .cat-wrapper .cat-sub-wrapper:first-child {
+        padding-top: 40px;
+        padding-bottom: 0; }
+    .content .cat-wrapper td {
+      padding: 10px; }
+
+/*tabs*/
+/* Style the tab */
+div.tab {
+  overflow: hidden;
+  border-bottom: 1px solid #d9d9d9; }
+
+/* Style the buttons inside the tab */
+div.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #777;
+  border: 1px solid transparent;
+  border-bottom: none; }
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+  color: #0b8e4f; }
+
+/* Create an active/current tablink class */
+div.tab button.active {
+  border: 1px solid #d9d9d9;
+  border-bottom: 1px solid #f2f2f2;
+  color: #0b8e4f;
+  background: #f2f2f2; }
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  border-top: none; }
+  .tabcontent table {
+    width: 100%; }
+    .tabcontent table th {
+      padding-top: 20px !important;
+      color: #0b8e4f;
+      text-align: left;
+      padding: 10px;
+      background-color: #f6f6f6 !important; }
+    .tabcontent table tr:nth-child(odd) {
+      background-color: #ededed; }
+    .tabcontent table td {
+      padding: 5px !important;
+      font-size: 14px; }
+      .tabcontent table td i {
+        cursor: pointer; }
+        .tabcontent table td i:hover {
+          color: #0b8e4f; }
+      .tabcontent table td.title {
+        cursor: pointer; }
+        .tabcontent table td.title:hover {
+          font-weight: bold; }
+
+/*modal*/
+.lightbox {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*MODAL TYPES*/ }
+  .lightbox .modal {
+    background-color: white;
+    display: initial;
+    margin-top: -40px;
+    border-radius: 5px;
+    min-width: 300px; }
+    .lightbox .modal hr {
+      margin: 0; }
+    .lightbox .modal .title {
+      background: #0b8e4f;
+      padding: 20px;
+      color: white;
+      border-radius: 5px 5px 0 0;
+      display: flex;
+      align-items: center; }
+    .lightbox .modal .body {
+      padding: 20px;
+      font-size: 14px; }
+    .lightbox .modal .actions {
+      padding: 15px;
+      display: flex;
+      justify-content: center; }
+      .lightbox .modal .actions button {
+        margin: 0 20px; }
+        .lightbox .modal .actions button.cancel {
+          background: #d9d9d9;
+          color: #777; }
+  .lightbox#approve-post {
+    display: none; }
+  .lightbox#archive-post {
+    display: none; }
 
 /*# sourceMappingURL=main.css.map */
