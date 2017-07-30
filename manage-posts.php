@@ -1,7 +1,12 @@
 <?php
   include_once('./includes/main/header.php');
   include_once('./php/post-manage_control.php');
-?>
+?>        <div class="cat-wrapper">
+            <div class="cat-sub-wrapper">
+              <h1>Manage Posts</h1>
+              <hr/>
+            </div>
+          </div>
           <div class="cat-wrapper">
             <div class="cat-sub-wrapper" style="padding-bottom: 30px;">
               Moderated Categories&nbsp;&nbsp;<?php echo $display_sub ?>
