@@ -100,7 +100,7 @@ function addMod(e) {
 
   if(display_cat == null) {
     document.getElementById("mod-selected-cat").innerHTML += "<span class='tag subbed' id='mod-" + selected_cat_ID + "' onclick='removeMod(" + selected_cat_ID + ")'>" + selected_cat_name + "</span>";
-    arrIDSub.push(selected_cat_ID);
+    arrIDMod.push(selected_cat_ID);
   }
 }
 
@@ -116,4 +116,30 @@ function removeMod(id) {
 
   console.log(arrIDMod);
   return false;
+}
+
+//close confirm
+function closeEditUserModal() {
+  document.getElementById('edit-user').style.display = 'none';
+}
+
+//open confirm
+function openEditUserModal(e) {
+  e.preventDefault();
+
+  if(document.getElementById("txt-sid").value !== ''
+    && document.getElementById("txt-fn").value !== ''
+    && document.getElementById("txt-ln").value !== ''
+    && document.getElementById("txt-email").value !== ''
+  ) {
+    document.getElementById("inv-input").innerHTML += "<input type='hidden' value='"+ arrIDSub +"' name='sub'/>";
+    document.getElementById("inv-input").innerHTML += "<input type='hidden' value='"+ arrIDMod +"' name='mod'/>";
+    document.getElementById('edit-user').style.display = 'flex';
+  }
+}
+
+//submit form, close modal
+function editUser() {
+  closeEditUserModal();
+  document.getElementById('edit-user-form').submit();
 }

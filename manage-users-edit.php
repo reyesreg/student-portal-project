@@ -9,18 +9,18 @@
               <form id="edit-user-form" method="POST" action="./php/inv_controllers/admin_func/edit_user.php">
                 <div class="input-wrapper">
                   <label for="">School No</label>
-                  <input type="text" placeholder="School ID..." name="schoolID" value=<?php echo "$studentID" ?> required/>
+                  <input id="txt-sid" type="text" placeholder="School ID..." name="schoolID" value=<?php echo "$studentID" ?> required/>
                 </div>
                 <div class="input-wrapper">
                   <label for="">Name</label>
                   <div style="display: flex; justify-content: space-between;">
-                    <input type="text" placeholder="First Name..." name="firstName" style="width: 49%;" value=<?php echo "$firstName" ?> required/>
-                    <input type="text" placeholder="Last Name..." name="lastName" style="width: 49%;" value=<?php echo "$lastName" ?> required/>
+                    <input id="txt-fn" type="text" placeholder="First Name..." name="firstName" style="width: 49%;" value=<?php echo "$firstName" ?> required/>
+                    <input id="txt-ln" type="text" placeholder="Last Name..." name="lastName" style="width: 49%;" value=<?php echo "$lastName" ?> required/>
                   </div>
                 </div>
                 <div class="input-wrapper">
                   <label for="">Email</label>
-                  <input type="text" placeholder="Email..." name="email" value=<?php echo "$email" ?> required/>
+                  <input id="txt-email" type="text" placeholder="Email..." name="email" value=<?php echo "$email" ?> required/>
                 </div>
                 <div class="input-wrapper">
                   <label for="">User Type</label>
@@ -64,8 +64,11 @@
                   </div>
                   <br/><br/>
                 </div>
+                <div id="inv-input">
+                  <input type='hidden' value='<?php echo $uID ?>' name='uID'/>
+                </div>
                 <button class="cancel" style="width: 200px; float: left;">Delete User</button>
-                <button class="submit">Update User</button>
+                <button class="submit" onclick="openEditUserModal(event);">Update User</button>
               </form>
             </div>
         </div>
@@ -75,6 +78,9 @@
       </div>
     </div>
   </div>
+  <?php
+    include_once('./includes/modals/edit-user.php');
+  ?>
   <script src="./assets/scripts/admin_func.js"></script>
 </body>
 </html>

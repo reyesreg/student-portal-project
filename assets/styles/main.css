@@ -353,5 +353,7 @@ div.tab button.active {
     display: none; }
   .lightbox#submit-post {
     display: none; }
+  .lightbox#edit-user {
+    display: none; }
 
 /*# sourceMappingURL=main.css.map */
