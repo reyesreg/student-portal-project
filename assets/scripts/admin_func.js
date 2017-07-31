@@ -35,14 +35,13 @@ function archivePost() {
 }
 
 /*****EDIT USER STUFF BELOW THIS LINE*****/
+toggleModView();
+
 var arrMod = document.getElementsByClassName("mod-tag");
 var arrIDMod = [];
 
 var arrSub = document.getElementsByClassName("sub-tag");
 var arrIDSub = [];
-
-toggleModView();
-
 
 for (var i = 0; i < arrMod.length; i++) {
   arrIDMod.push(arrMod[i].id.split("-")[1]);
@@ -52,7 +51,18 @@ for (var i = 0; i < arrSub.length; i++) {
   arrIDSub.push(arrSub[i].id.split("-")[1]);
 }
 
-//add category to post
+//check if user type should be able to edit mods
+function toggleModView() {
+  var selected_type = document.getElementById("select-type").value;
+
+  if(selected_type == 'student_mod' || selected_type == 'super_admin' || selected_type == 'faculty') {
+    document.getElementById("mod-wrapper").style.display = 'initial';
+  } else {
+    document.getElementById("mod-wrapper").style.display = 'none';
+  }
+}
+
+//add sub to list
 function addSub(e) {
   e.preventDefault();
 
@@ -66,7 +76,7 @@ function addSub(e) {
   }
 }
 
-//remove category from post
+//remove sub from list
 function removeSub(id) {
   var selected_cat_ID = document.getElementById("sub-" + id);
   selected_cat_ID.parentNode.removeChild(selected_cat_ID);
@@ -80,12 +90,30 @@ function removeSub(id) {
   return false;
 }
 
-function toggleModView() {
-  var selected_type = document.getElementById("select-type").value;
+//add mod cat to list
+function addMod(e) {
+  e.preventDefault();
 
-  if(selected_type == 'student_mod' || selected_type == 'super_admin' || selected_type == 'faculty') {
-    document.getElementById("mod-wrapper").style.display = 'initial';
-  } else {
-    document.getElementById("mod-wrapper").style.display = 'none';
+  var selected_cat_ID = document.getElementById("select-mod").value;
+  var selected_cat_name = document.getElementById("select-mod").options[selected_cat_ID-1].innerHTML;
+  var display_cat = document.getElementById("mod-" + selected_cat_ID);
+
+  if(display_cat == null) {
+    document.getElementById("mod-selected-cat").innerHTML += "<span class='tag subbed' id='mod-" + selected_cat_ID + "' onclick='removeMod(" + selected_cat_ID + ")'>" + selected_cat_name + "</span>";
+    arrIDSub.push(selected_cat_ID);
   }
+}
+
+//remove mod cat from list
+function removeMod(id) {
+  var selected_cat_ID = document.getElementById("mod-" + id);
+  selected_cat_ID.parentNode.removeChild(selected_cat_ID);
+
+  var index = arrIDMod.indexOf(id.toString());
+  if (index > -1) {
+    arrIDMod.splice(index, 1);
+  }
+
+  console.log(arrIDMod);
+  return false;
 }

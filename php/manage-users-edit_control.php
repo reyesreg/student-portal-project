@@ -64,7 +64,7 @@
               $catID = $row_mod['catID'];
               $catName =$row_mod['catName'];
 
-              $mod_display .= "<span class='tag subbed mod-tag' id='mod-$catID'>$catName</span>";
+              $mod_display .= "<span class='tag subbed mod-tag' id='mod-$catID' onclick='removeMod($catID)'>$catName</span>";
               $mod_cat[$mod_index] = $catID;
               $mod_index++;
             }

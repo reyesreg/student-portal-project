@@ -2,7 +2,6 @@
   include_once('./includes/main/header.php');
   include_once('./php/manage-users-edit_control.php');
 ?>
-        <!-- Holy mother of spaghetti code -->
         <div class="cat-wrapper">
             <div class="cat-sub-wrapper">
               <h1>Update User</h1>
@@ -55,7 +54,7 @@
                       <select id="select-mod" style="width:100%;">
                         <?php echo $display_categories ?>
                       </select>
-                      <button class="add" onclick="">Add</button>
+                      <button class="add" onclick="addMod(event)">Add</button>
                     </div>
                     <br/>
                     <div id="selected-cat-wrapper">
