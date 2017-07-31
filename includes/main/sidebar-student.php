@@ -50,7 +50,7 @@
     }
     if($user_type === 'super_mod') {
       echo "<li";
-      if($route[2]=='manage-users.php') 
+      if($route[2]=='manage-users.php' || $route[2]=='manage-users-create.php') 
         echo ' class="active"';
       echo "><a href='./manage-users.php'>MANAGE USERS</a></li>";
     }

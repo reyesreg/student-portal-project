@@ -33,3 +33,5 @@ function archivePost() {
   document.getElementById('archive-post').style.display = 'none';
   window.location = "./php/inv_controllers/admin_func/archive_post.php?anID=" + chosenArchivedPost;
 }
+
+//Create user

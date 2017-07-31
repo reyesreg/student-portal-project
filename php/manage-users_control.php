@@ -7,6 +7,8 @@
     if ($_SESSION['uType'] == 'super_mod') {
       $display_students = "";
       $display_student_mods = "";
+      $display_faculty = "";
+      $display_personnel = "";
       $display_super_mods = "";
 
       $get_users = "SELECT 
@@ -42,7 +44,9 @@
               <td>$sID</td>
               <td>$firstName $lastName</td>
               <td>$display_subs</td>
-              <td></td>
+              <td align='center'>
+                <a href='./manage-users-edit.php?id=$uID'><i class='material-icons'>settings</i></a>
+              </td>
             </tr>
           ";
         }
@@ -66,7 +70,32 @@
               <td>$firstName $lastName</td>
               <td>$display_subs</td>
               <td>$display_mod</td>
+              <td align='center'>
+                <a href='./manage-users-edit.php?id=$uID'><i class='material-icons'>settings</i></a>
+              </td>
+            </tr>
+          ";
+        } else if($type == 'faculty') {
+          $display_faculty .= "
+            <tr>
+              <td>$sID</td>
+              <td>$firstName $lastName</td>
+              <td>$display_subs</td>
               <td></td>
+              <td align='center'>
+                <a href='./manage-users-edit.php?id=$uID'><i class='material-icons'>settings</i></a>
+              </td>
+            </tr>
+          ";
+        } else if($type == 'personnel') {
+          $display_personnel .= "
+            <tr>
+              <td>$sID</td>
+              <td>$firstName $lastName</td>
+              <td>$display_subs</td>
+              <td align='center'>
+                <a href='./manage-users-edit.php?id=$uID'><i class='material-icons'>settings</i></a>
+              </td>
             </tr>
           ";
         } else if($type == 'super_mod') {
@@ -75,7 +104,9 @@
               <td>$sID</td>
               <td>$firstName $lastName</td>
               <td>$display_subs</td>
-              <td></td>
+              <td align='center'>
+                <a href='./manage-users-edit.php?id=$uID'><i class='material-icons'>settings</i></a>
+              </td>
             </tr>
           ";
         }

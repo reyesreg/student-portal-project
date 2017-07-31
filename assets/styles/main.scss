@@ -63,6 +63,11 @@ button {
   &:hover {
     opacity: 0.9;
   }
+
+  &.submit {
+    float: right;
+    width: 200px;
+  }
 }
 
 ::-webkit-scrollbar {
@@ -383,6 +388,13 @@ div.tab button {
     color: #777;
     border: 1px solid transparent;
     border-bottom: none;
+
+    &.create-user {
+      float: right;
+      color: #0b8e4f;
+      font-weight: bold;
+      padding: 5px;
+    }
 }
 
 /* Change background color of buttons on hover */
@@ -409,7 +421,7 @@ div.tab button.active {
   }
 }
 
-#submit-post-form {
+#submit-post-form, #edit-user-form {
   margin-top: 30px;
 
   .box {
@@ -426,11 +438,6 @@ div.tab button.active {
   }
 
   button {
-    &.submit {
-      float: right;
-      width: 200px;
-    }
-
     &.add {
       margin-left: 20px;
     }
