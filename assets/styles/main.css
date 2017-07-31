@@ -303,6 +303,9 @@ div.tab button.active {
   #submit-post-form button.add, #edit-user-form button.add {
     margin-left: 20px; }
 
+#mod-wrapper {
+  display: none; }
+
 /* Style the tab content */
 .tabcontent {
   display: none;

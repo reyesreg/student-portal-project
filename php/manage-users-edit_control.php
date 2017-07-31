@@ -13,7 +13,7 @@
         $email = "";
 
         $sub_cat = array();
-        $sub_display = "";
+        $sub_display = "<span class='tag subbed sub-tag' id='sub-1'>General</span>";
         $sub_index = 0;
 
         $mod_cat = array();
@@ -47,7 +47,7 @@
             $catID = $row_sub['catID'];
             $catName =$row_sub['catName'];
 
-            $sub_display .= "<span class='tag subbed'>$catName</span>";
+            $sub_display .= "<span class='tag subbed sub-tag' id='sub-$catID' onclick='removeSub($catID)'>$catName</span>";
             $sub_cat[$sub_index] = $catID;
             $sub_index++;
           }
@@ -64,12 +64,26 @@
               $catID = $row_mod['catID'];
               $catName =$row_mod['catName'];
 
-              $mod_display .= "<span class='tag subbed'>$catName</span>";
+              $mod_display .= "<span class='tag subbed mod-tag' id='mod-$catID'>$catName</span>";
               $mod_cat[$mod_index] = $catID;
               $mod_index++;
             }
           }
         }
+
+        $display_categories = "";
+
+        $get_categories = "SELECT 
+          catID, catName
+          FROM categories";
+        $result_categories = $con->query($get_categories) or die(mysqli_error($con));
+        while($row_categories = mysqli_fetch_array($result_categories)) {
+          $catID = $row_categories['catID'];
+          $catName = $row_categories['catName'];
+
+          $display_categories .= "<option value='$catID'>$catName</option>";
+        }
+        
       } else {
         header('location: ./index.php');
       }

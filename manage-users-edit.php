@@ -2,6 +2,7 @@
   include_once('./includes/main/header.php');
   include_once('./php/manage-users-edit_control.php');
 ?>
+        <!-- Holy mother of spaghetti code -->
         <div class="cat-wrapper">
             <div class="cat-sub-wrapper">
               <h1>Update User</h1>
@@ -24,7 +25,7 @@
                 </div>
                 <div class="input-wrapper">
                   <label for="">User Type</label>
-                  <select name="type">
+                  <select name="type" id="select-type" onchange="toggleModView()">
                     <option value="student" <?php if($type == 'student') echo "selected" ?>>Student</option>
                     <option value="student_mod" <?php if($type == 'student_mod') echo "selected" ?>>Student Moderator</option>
                     <option value="faculty" <?php if($type == 'faculty') echo "selected" ?>>Faculty</option>
@@ -35,10 +36,10 @@
                 <label style="color: #0b8e4f">Subscribed Categories</label>
                 <div class="box">
                   <div style="display: flex;">
-                    <select id="select-cat" style="width:100%;">
-                      <option>General</option>
+                    <select id="select-sub" style="width:100%;">
+                      <?php echo $display_categories ?>
                     </select>
-                    <button class="add" onclick="">Add</button>
+                    <button class="add" onclick="addSub(event)">Add</button>
                   </div>
                   <br/>
                   <div id="selected-cat-wrapper">
@@ -47,21 +48,23 @@
                   </div>
                 </div>
                 <br/><br/>
-                <label style="color: #0b8e4f" id="edit-moderated-cat">Moderated Categories</label>
-                <div class="box">
-                  <div style="display: flex;">
-                    <select id="select-cat" style="width:100%;">
-                      <option>General</option>
-                    </select>
-                    <button class="add" onclick="">Add</button>
+                <div id="mod-wrapper">
+                  <label style="color: #0b8e4f" id="edit-moderated-cat">Moderated Categories</label>
+                  <div class="box">
+                    <div style="display: flex;">
+                      <select id="select-mod" style="width:100%;">
+                        <?php echo $display_categories ?>
+                      </select>
+                      <button class="add" onclick="">Add</button>
+                    </div>
+                    <br/>
+                    <div id="selected-cat-wrapper">
+                      <div>Selected Categories:&nbsp;&nbsp;</div>
+                      <div id="mod-selected-cat"><?php echo $mod_display ?></div>
+                    </div>
                   </div>
-                  <br/>
-                  <div id="selected-cat-wrapper">
-                    <div>Selected Categories:&nbsp;&nbsp;</div>
-                    <div id="mod-selected-cat"><?php echo $mod_display ?></div>
-                  </div>
+                  <br/><br/>
                 </div>
-                <br/><br/>
                 <button class="cancel" style="width: 200px; float: left;">Delete User</button>
                 <button class="submit">Update User</button>
               </form>
@@ -73,5 +76,6 @@
       </div>
     </div>
   </div>
+  <script src="./assets/scripts/admin_func.js"></script>
 </body>
 </html>
