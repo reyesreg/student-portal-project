@@ -355,5 +355,7 @@ div.tab button.active {
     display: none; }
   .lightbox#edit-user {
     display: none; }
+  .lightbox#delete-user {
+    display: none; }
 
 /*# sourceMappingURL=main.css.map */

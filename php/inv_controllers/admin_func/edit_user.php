@@ -36,14 +36,16 @@
 
         if (isset($_POST['mod'])) {
           $mod = $_POST['mod'];
-          $mod_array = spliti (",", $mod);
+          if($mod !== '') {
+            $mod_array = spliti (",", $mod);
 
-          $del_mods = "DELETE FROM mod_cat WHERE uID = $uID";
-          $con->query($del_mods) or die(mysqli_error($con));
+            $del_mods = "DELETE FROM mod_cat WHERE uID = $uID";
+            $con->query($del_mods) or die(mysqli_error($con));
 
-          foreach ($mod_array as $value) {
-            $add_mod= "INSERT INTO mod_cat VALUES ($uID, $value)";
-            $con->query($add_mod) or die(mysqli_error($con));
+            foreach ($mod_array as $value) {
+              $add_mod= "INSERT INTO mod_cat VALUES ($uID, $value)";
+              $con->query($add_mod) or die(mysqli_error($con));
+            }
           }
         }
 
@@ -55,4 +57,4 @@
   } else {
     header('location: ../../../index.php');
   }
-?>s
+?>

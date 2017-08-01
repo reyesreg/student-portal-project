@@ -147,3 +147,20 @@ function editUser() {
   closeEditUserModal();
   document.getElementById('edit-user-form').submit();
 }
+
+//open confirm
+function openDeleteUserModal(e) {
+  e.preventDefault();
+  document.getElementById('delete-user').style.display = 'flex';
+}
+
+//close confirm
+function closeDeleteUserModal() {
+  document.getElementById('delete-user').style.display = 'none';
+}
+
+function deleteUser() {
+  closeDeleteUserModal();
+  var id =window.location.search.split('=')[1];
+  window.location = "./php/inv_controllers/admin_func/delete_user.php?id=" +  id;
+}

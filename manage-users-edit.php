@@ -67,7 +67,7 @@
                 <div id="inv-input">
                   <input type='hidden' value='<?php echo $uID ?>' name='uID'/>
                 </div>
-                <button class="cancel" style="width: 200px; float: left;">Delete User</button>
+                <button class="cancel" style="width: 200px; float: left;" onclick="openDeleteUserModal(event);">Delete User</button>
                 <button class="submit" onclick="openEditUserModal(event);">Update User</button>
               </form>
             </div>
@@ -80,6 +80,7 @@
   </div>
   <?php
     include_once('./includes/modals/edit-user.php');
+    include_once('./includes/modals/delete-user.php');
   ?>
   <script src="./assets/scripts/admin_func.js"></script>
 </body>
