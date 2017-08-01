@@ -13,8 +13,8 @@
         $email = "";
 
         $sub_cat = array();
-        $sub_display = "<span class='tag subbed sub-tag' id='sub-1'>General</span>";
-        $sub_index = 0;
+        $sub_display = "";
+        $sub_index = 1;
 
         $mod_cat = array();
         $mod_display = "";
@@ -41,7 +41,7 @@
             c.catName 
             FROM categories c 
             INNER JOIN user_cat uc ON c.catID=uc.catID 
-            WHERE uc.uID=$uID";
+            WHERE uc.uID=$uID ";
           $result_sub = $con->query($get_sub) or die(mysqli_error($con));
           while($row_sub = mysqli_fetch_array($result_sub)) {
             $catID = $row_sub['catID'];
@@ -71,11 +71,12 @@
           }
         }
 
-        $display_categories = "";
+        $display_categories = "<option disabled>General</option>";
 
         $get_categories = "SELECT 
           catID, catName
-          FROM categories";
+          FROM categories 
+          WHERE catID <> 1";
         $result_categories = $con->query($get_categories) or die(mysqli_error($con));
         while($row_categories = mysqli_fetch_array($result_categories)) {
           $catID = $row_categories['catID'];

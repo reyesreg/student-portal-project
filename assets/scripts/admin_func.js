@@ -51,6 +51,8 @@ for (var i = 0; i < arrSub.length; i++) {
   arrIDSub.push(arrSub[i].id.split("-")[1]);
 }
 
+console.log(arrIDMod);
+
 //check if user type should be able to edit mods
 function toggleModView() {
   var selected_type = document.getElementById("select-type").value;
@@ -74,6 +76,7 @@ function addSub(e) {
     document.getElementById("sub-selected-cat").innerHTML += "<span class='tag subbed' id='sub-" + selected_cat_ID + "' onclick='removeSub(" + selected_cat_ID + ")'>" + selected_cat_name + "</span>";
     arrIDSub.push(selected_cat_ID);
   }
+
 }
 
 //remove sub from list
@@ -86,7 +89,6 @@ function removeSub(id) {
     arrIDSub.splice(index, 1);
   }
 
-  console.log(arrIDSub);
   return false;
 }
 
@@ -102,6 +104,8 @@ function addMod(e) {
     document.getElementById("mod-selected-cat").innerHTML += "<span class='tag subbed' id='mod-" + selected_cat_ID + "' onclick='removeMod(" + selected_cat_ID + ")'>" + selected_cat_name + "</span>";
     arrIDMod.push(selected_cat_ID);
   }
+
+  console.log(arrIDMod);
 }
 
 //remove mod cat from list
