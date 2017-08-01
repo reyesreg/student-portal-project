@@ -13,7 +13,12 @@
               <div class="tab">
                 <button class="tablinks" onclick="openTab(event, 'students')" id="defaultOpen">Students</button>
                 <button class="tablinks" onclick="openTab(event, 'student_mod')">Student Mods</button>
+                <button class="tablinks" onclick="openTab(event, 'faculty')">Faculty</button>
+                <button class="tablinks" onclick="openTab(event, 'personnel')">Personnel</button>
                 <button class="tablinks" onclick="openTab(event, 'super_mod')">Super Mods</button>
+                <button class="create-user" onclick="window.location = './manage-users-create.php';">
+                  <i class='material-icons'>add_circle</i>&nbsp;&nbsp;Create User
+                </button>
               </div>
 
               <div id="students" class="tabcontent">
@@ -41,6 +46,35 @@
                   </thead>
                   <tbody>
                     <?php echo $display_student_mods ?>
+                  </tbody>
+                </table>
+              </div>
+
+              <div id="faculty" class="tabcontent">
+                <table class="pretty">
+                  <thead>
+                    <th width="10%">School ID</th>
+                    <th width="20%">Name</th>
+                    <th width="30%">Subscribed</th>
+                    <th width="30%">Moderated</th>
+                    <th width="10%"></th>
+                  </thead>
+                  <tbody>
+                    <?php echo $display_faculty ?>
+                  </tbody>
+                </table>
+              </div>
+
+              <div id="personnel" class="tabcontent">
+                <table class="pretty">
+                  <thead>
+                    <th width="10%">School ID</th>
+                    <th width="20%">Name</th>
+                    <th width="60%">Subscribed</th>
+                    <th width="10%"></th>
+                  </thead>
+                  <tbody>
+                    <?php echo $display_personnel ?>
                   </tbody>
                 </table>
               </div>

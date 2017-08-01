@@ -33,3 +33,134 @@ function archivePost() {
   document.getElementById('archive-post').style.display = 'none';
   window.location = "./php/inv_controllers/admin_func/archive_post.php?anID=" + chosenArchivedPost;
 }
+
+/*****EDIT USER STUFF BELOW THIS LINE*****/
+toggleModView();
+
+var arrMod = document.getElementsByClassName("mod-tag");
+var arrIDMod = [];
+
+var arrSub = document.getElementsByClassName("sub-tag");
+var arrIDSub = [];
+
+for (var i = 0; i < arrMod.length; i++) {
+  arrIDMod.push(arrMod[i].id.split("-")[1]);
+}
+
+for (var i = 0; i < arrSub.length; i++) {
+  arrIDSub.push(arrSub[i].id.split("-")[1]);
+}
+
+console.log(arrIDMod);
+
+//check if user type should be able to edit mods
+function toggleModView() {
+  var selected_type = document.getElementById("select-type").value;
+
+  if(selected_type == 'student_mod' || selected_type == 'super_admin' || selected_type == 'faculty') {
+    document.getElementById("mod-wrapper").style.display = 'initial';
+  } else {
+    document.getElementById("mod-wrapper").style.display = 'none';
+  }
+}
+
+//add sub to list
+function addSub(e) {
+  e.preventDefault();
+
+  var selected_cat_ID = document.getElementById("select-sub").value;
+  var selected_cat_name = document.getElementById("select-sub").options[selected_cat_ID-1].innerHTML;
+  var display_cat = document.getElementById("sub-" + selected_cat_ID);
+
+  if(display_cat == null) {
+    document.getElementById("sub-selected-cat").innerHTML += "<span class='tag subbed' id='sub-" + selected_cat_ID + "' onclick='removeSub(" + selected_cat_ID + ")'>" + selected_cat_name + "</span>";
+    arrIDSub.push(selected_cat_ID);
+  }
+
+}
+
+//remove sub from list
+function removeSub(id) {
+  var selected_cat_ID = document.getElementById("sub-" + id);
+  selected_cat_ID.parentNode.removeChild(selected_cat_ID);
+
+  var index = arrIDSub.indexOf(id.toString());
+  if (index > -1) {
+    arrIDSub.splice(index, 1);
+  }
+
+  return false;
+}
+
+//add mod cat to list
+function addMod(e) {
+  e.preventDefault();
+
+  var selected_cat_ID = document.getElementById("select-mod").value;
+  var selected_cat_name = document.getElementById("select-mod").options[selected_cat_ID-1].innerHTML;
+  var display_cat = document.getElementById("mod-" + selected_cat_ID);
+
+  if(display_cat == null) {
+    document.getElementById("mod-selected-cat").innerHTML += "<span class='tag subbed' id='mod-" + selected_cat_ID + "' onclick='removeMod(" + selected_cat_ID + ")'>" + selected_cat_name + "</span>";
+    arrIDMod.push(selected_cat_ID);
+  }
+
+  console.log(arrIDMod);
+}
+
+//remove mod cat from list
+function removeMod(id) {
+  var selected_cat_ID = document.getElementById("mod-" + id);
+  selected_cat_ID.parentNode.removeChild(selected_cat_ID);
+
+  var index = arrIDMod.indexOf(id.toString());
+  if (index > -1) {
+    arrIDMod.splice(index, 1);
+  }
+
+  console.log(arrIDMod);
+  return false;
+}
+
+//close confirm
+function closeEditUserModal() {
+  document.getElementById('edit-user').style.display = 'none';
+}
+
+//open confirm
+function openEditUserModal(e) {
+  e.preventDefault();
+
+  if(document.getElementById("txt-sid").value !== ''
+    && document.getElementById("txt-fn").value !== ''
+    && document.getElementById("txt-ln").value !== ''
+    && document.getElementById("txt-email").value !== ''
+  ) {
+    document.getElementById("inv-input").innerHTML += "<input type='hidden' value='"+ arrIDSub +"' name='sub'/>";
+    document.getElementById("inv-input").innerHTML += "<input type='hidden' value='"+ arrIDMod +"' name='mod'/>";
+    document.getElementById('edit-user').style.display = 'flex';
+  }
+}
+
+//submit form, close modal
+function editUser() {
+  closeEditUserModal();
+  document.getElementById('edit-user-form').submit();
+}
+
+//open confirm
+function openDeleteUserModal(e) {
+  e.preventDefault();
+  document.getElementById('delete-user').style.display = 'flex';
+}
+
+//close confirm
+function closeDeleteUserModal() {
+  document.getElementById('delete-user').style.display = 'none';
+}
+
+function deleteUser() {
+  closeDeleteUserModal();
+  var id =window.location.search.split('=')[1];
+  window.location = "./php/inv_controllers/admin_func/delete_user.php?id=" +  id;
+}

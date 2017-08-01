@@ -12,15 +12,27 @@
 
       $cat_array = spliti (",", $cat);
 
-      $add_announcement = "INSERT INTO announcements VALUES 
-        ('',
-        '$title',
-        '$desc',
-        NOW(),
-        NULL,
-        $uID,
-        'pending', 
-        NULL)";
+      if($_SESSION['uType'] == 'student' || $_SESSION['uType'] == 'personnel') {
+        $add_announcement = "INSERT INTO announcements VALUES 
+          ('',
+          '$title',
+          '$desc',
+          NOW(),
+          NULL,
+          $uID,
+          'pending', 
+          NULL)";
+      } else {
+        $add_announcement = "INSERT INTO announcements VALUES 
+          ('',
+          '$title',
+          '$desc',
+          NOW(),
+          NULL,
+          $uID,
+          'approved', 
+          NULL)";
+      }
       $con->query($add_announcement) or die(mysqli_error($con));
       $last_id = $con->insert_id;
       

@@ -60,6 +60,6 @@ function openSubmitModal(e) {
 }
 
 function submitPost() {
-  document.getElementById('submit-post').style.display = 'none';
+  closeSubmitModal();
   document.getElementById('submit-post-form').submit();
 }
