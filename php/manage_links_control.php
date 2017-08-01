@@ -9,7 +9,7 @@
 
       $display_man .= "
       <span class='title'>$cat</span>&nbsp&nbsp&nbsp
-      <a href='/webdev/student-portal-project-develop/linkae.php'><span class='subtitle'>Add</span></a>
+      <span class='subtitle'><a href='/webdev/student-portal-project-develop/linkae.php?cat=$liID'>Add</a></span>
       </br></br>
       <table style='width:100%'>";
     
