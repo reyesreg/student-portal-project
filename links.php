@@ -1,9 +1,12 @@
 <?php
   include_once('./includes/main/header.php');
   include_once('./php/announcement_control.php');
-?>
-        
-      </div>
+  include_once('./php/link_control.php');
+?>          
+    <?php
+    echo $display_cat;
+    ?>    
+    </div>
       <div class="col-side">
         <div class="calendar"></div>
       </div>

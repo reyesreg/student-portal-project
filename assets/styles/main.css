@@ -19,6 +19,9 @@ a {
   color: #0b8e4f;
   text-decoration: none; }
 
+p {
+  text-indent: 50px;}
+
 hr {
   display: block;
   height: 1px;
@@ -180,6 +183,9 @@ h1 {
   .content .subbed {
     background: #0b8e4f;
     color: white; }
+  .content .notsubbed {
+    background: white;
+    color: #0b8e4f; }
   .content .form-submit {
     display: flex;
     justify-content: flex-end;

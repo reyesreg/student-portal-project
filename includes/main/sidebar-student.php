@@ -13,11 +13,14 @@
   <li id="li-home" <?php if($route[2]=='' || $route[2]=='index.php') echo 'class="active"' ?>><a href="./">HOME</a></li>
 
   <?php
-    if($user_type === 'student'|| $user_type === 'student_mod') {
+    if($user_type === 'student'|| $user_type === 'student_mod' || $user_type === 'super_mod') {
       echo "<li";
       if($route[2]=='categories.php') 
         echo ' class="active"';
-      echo "><a href='./categories.php'>VIEW CATEGORIES</a></li>";
+      echo "><a href='./categories.php'>VIEW CATEGORIES</a></li>
+            <li>
+             <a href='./settings.php'>SETTINGS</a>
+             </li>";
     }
   ?>
 
@@ -28,16 +31,14 @@
       echo "<li";
       if($route[2]=='settings.php') 
         echo ' class="active"';
-      echo ">
-              <a href='./settings.php'>SETTINGS</a>
-            </li> 
+      echo "> 
             <hr />
             <li>
-              <a href='#'>MANAGE POSTS</a>
-            </li>";
+            <a href='#'>MANAGE POSTS</a></li>";
     }
     if($user_type === 'super_mod') {
-      echo "<li><a href='#'>MANAGE USERS</a></li>";
+      echo "<li><a href='#'>MANAGE USERS</a></li>
+            <li><a href='http://localhost/webdev/student-portal-project-develop/manage_links.php'>MANAGE LINKS</a></li>";
     }
   ?>
 </ul>
