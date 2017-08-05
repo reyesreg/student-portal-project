@@ -5,7 +5,6 @@ error_reporting(0);
 $id = "";
 $name = "";
 $link = "";
-$catid = "";
 
 #populate textboxes with data
 if($id = $_GET['id'] > 0 ){

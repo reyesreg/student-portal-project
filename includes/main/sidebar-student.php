@@ -8,7 +8,11 @@
   }
 ?>
 
-<input type="text" placeholder="Search..."/>
+<form action="search.php" method="get">
+<input name="query" type="text" placeholder="Search..." style="width : 55%"/>
+<button style="width : 20%">?</button>
+</form>
+
 <ul>
   <li id="li-home" <?php if($route[2]=='' || $route[2]=='index.php') echo 'class="active"' ?>><a href="./">HOME</a></li>
 
@@ -21,7 +25,7 @@
             <li>
              <a href='./settings.php'>SETTINGS</a>
              </li>";
-    }
+    } 
   ?>
 
   <li id="li-links" <?php if($route[2]=='links.php') echo 'class="active"' ?>><a href="./links.php">LINKS</a></li>
@@ -38,7 +42,8 @@
     }
     if($user_type === 'super_mod') {
       echo "<li><a href='#'>MANAGE USERS</a></li>
-            <li><a href='http://localhost/webdev/student-portal-project-develop/manage_links.php'>MANAGE LINKS</a></li>";
+            <li><a href='http://localhost/webdev/student-portal-project-develop/manage_links.php'>MANAGE LINKS</a></li>
+            <li><a href='./manage_categories.php'>MANAGE CATEGORIES</a></li>";
     }
   ?>
 </ul>
